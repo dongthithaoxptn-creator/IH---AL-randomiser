@@ -837,360 +837,360 @@ let len = 90, left = 90, tick = null, running = false;
    Each entry is [file, type, transcript, id, book combo (3 or 2; 0 = role-play/intro), needs (id of the question it refers back to),
    asks about the survey (1/0), kind ('topic'|'rp'|'intro'), topic number / role-play number]. Paths are relative to this HTML file. */
 const AUDIO_BANK = {
- "Self Introduction":[["question-audio/intro.mp3", "Self-introduction", "Let's start the interview now. Tell me a little bit about yourself.", "intro", 0, null, 0, "intro", 0]],
+ "Self Introduction":[["intro.mp3", "Self-introduction", "Let's start the interview now. Tell me a little bit about yourself.", "intro", 0, null, 0, "intro", 0]],
  "Work":[
-  ["question-audio/T01Q01.mp3", "Describe", "You indicated that you work. Tell me about your company — what kind of company is it, when was it founded, where is it located, and what products or services does it provide?", "T01Q01", 3, null, 1, "topic", 1],
-  ["question-audio/T01Q02.mp3", "Routine", "Describe your typical workday. What do you do when you first arrive at the office, and what does the rest of your day look like?", "T01Q02", 3, null, 0, "topic", 1],
-  ["question-audio/T01Q03.mp3", "Past experience", "Tell me about a project you worked on at the office last week. What was it, how did it go, and did you attend any meetings for it?", "T01Q03", 3, null, 0, "topic", 1]
+  ["T01Q01.mp3", "Describe", "You indicated that you work. Tell me about your company — what kind of company is it, when was it founded, where is it located, and what products or services does it provide?", "T01Q01", 3, null, 1, "topic", 1],
+  ["T01Q02.mp3", "Routine", "Describe your typical workday. What do you do when you first arrive at the office, and what does the rest of your day look like?", "T01Q02", 3, null, 0, "topic", 1],
+  ["T01Q03.mp3", "Past experience", "Tell me about a project you worked on at the office last week. What was it, how did it go, and did you attend any meetings for it?", "T01Q03", 3, null, 0, "topic", 1]
  ],
  "Housing":[
-  ["question-audio/T02Q01.mp3", "Describe", "Tell me about where you live. Describe your home — what does it look like and how many rooms does it have?", "T02Q01", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q02.mp3", "Routine", "What is your typical routine at home? What do you usually do on weekdays compared to weekends?", "T02Q02", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q03.mp3", "Compare", "Describe the home you grew up in as a child. How was it different from where you live now?", "T02Q03", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q04.mp3", "Describe", "Talk about the different rooms in your home. Which is your favorite room, and what does it look like?", "T02Q04", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q05.mp3", "Routine", "What do you do to keep your home clean and comfortable? What kinds of housework do you regularly do?", "T02Q05", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q06.mp3", "Past experience", "We sometimes want to change something in our home — new furniture, fresh paint, some decorating. Tell me about a change you made to your home and why you made it.", "T02Q06", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q07.mp3", "Past experience", "Talk about the place and surrounding area where you lived as a child. What do you remember about it?", "T02Q07", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q08.mp3", "Past experience", "Tell me about a special memory you had at home with your family — perhaps you had guests over or hosted a celebration.", "T02Q08", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q09.mp3", "Past experience", "Problems always arise in any home — things break, projects go wrong, or housemates don't cooperate. Tell me about some issues you've had at home.", "T02Q09", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q10.mp3", "Past experience", "Choose one of those problems and explain everything that happened in detail — what caused it, and how did you resolve it?", "T02Q10", 3, "T02Q09", 0, "topic", 2],
-  ["question-audio/T02Q11.mp3", "Routine", "Tell me about the different responsibilities in your home. Who is in charge of what, and how do you manage everything?", "T02Q11", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q12.mp3", "Past experience", "Tell me about the household responsibilities you had as a child. What were you expected to do, and how did you manage them?", "T02Q12", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q13.mp3", "Past experience", "Do you remember a specific incident as a child when you were unable to complete a task you were supposed to do? What happened and why?", "T02Q13", 3, null, 0, "topic", 2],
-  ["question-audio/T02Q14.mp3", "Compare", "Homes today are very different from those built in the past. How have homes in your country changed in recent years, in terms of design and technology?", "T02Q14", 2, null, 0, "topic", 2],
-  ["question-audio/T02Q15.mp3", "Opinion / issue", "Housing is often in the news. What do people in your country discuss when it comes to housing? Tell me about a news story you remember.", "T02Q15", 2, null, 0, "topic", 2],
-  ["question-audio/T02Q16.mp3", "Opinion / issue", "What are the major problems people face when renting a house or apartment? How do people deal with these issues, and how do they affect where people choose to live?", "T02Q16", 2, null, 0, "topic", 2],
-  ["question-audio/T02Q17.mp3", "Opinion / issue", "Talk about a specific modern appliance or device that people consider useful or convenient at home. Why do people think this appliance is useful?", "T02Q17", 2, null, 0, "topic", 2],
-  ["question-audio/T02Q18.mp3", "Compare", "How have home appliances changed our lives? How was life before these appliances different from life now? What is the biggest change?", "T02Q18", 2, null, 0, "topic", 2]
+  ["T02Q01.mp3", "Describe", "Tell me about where you live. Describe your home — what does it look like and how many rooms does it have?", "T02Q01", 3, null, 0, "topic", 2],
+  ["T02Q02.mp3", "Routine", "What is your typical routine at home? What do you usually do on weekdays compared to weekends?", "T02Q02", 3, null, 0, "topic", 2],
+  ["T02Q03.mp3", "Compare", "Describe the home you grew up in as a child. How was it different from where you live now?", "T02Q03", 3, null, 0, "topic", 2],
+  ["T02Q04.mp3", "Describe", "Talk about the different rooms in your home. Which is your favorite room, and what does it look like?", "T02Q04", 3, null, 0, "topic", 2],
+  ["T02Q05.mp3", "Routine", "What do you do to keep your home clean and comfortable? What kinds of housework do you regularly do?", "T02Q05", 3, null, 0, "topic", 2],
+  ["T02Q06.mp3", "Past experience", "We sometimes want to change something in our home — new furniture, fresh paint, some decorating. Tell me about a change you made to your home and why you made it.", "T02Q06", 3, null, 0, "topic", 2],
+  ["T02Q07.mp3", "Past experience", "Talk about the place and surrounding area where you lived as a child. What do you remember about it?", "T02Q07", 3, null, 0, "topic", 2],
+  ["T02Q08.mp3", "Past experience", "Tell me about a special memory you had at home with your family — perhaps you had guests over or hosted a celebration.", "T02Q08", 3, null, 0, "topic", 2],
+  ["T02Q09.mp3", "Past experience", "Problems always arise in any home — things break, projects go wrong, or housemates don't cooperate. Tell me about some issues you've had at home.", "T02Q09", 3, null, 0, "topic", 2],
+  ["T02Q10.mp3", "Past experience", "Choose one of those problems and explain everything that happened in detail — what caused it, and how did you resolve it?", "T02Q10", 3, "T02Q09", 0, "topic", 2],
+  ["T02Q11.mp3", "Routine", "Tell me about the different responsibilities in your home. Who is in charge of what, and how do you manage everything?", "T02Q11", 3, null, 0, "topic", 2],
+  ["T02Q12.mp3", "Past experience", "Tell me about the household responsibilities you had as a child. What were you expected to do, and how did you manage them?", "T02Q12", 3, null, 0, "topic", 2],
+  ["T02Q13.mp3", "Past experience", "Do you remember a specific incident as a child when you were unable to complete a task you were supposed to do? What happened and why?", "T02Q13", 3, null, 0, "topic", 2],
+  ["T02Q14.mp3", "Compare", "Homes today are very different from those built in the past. How have homes in your country changed in recent years, in terms of design and technology?", "T02Q14", 2, null, 0, "topic", 2],
+  ["T02Q15.mp3", "Opinion / issue", "Housing is often in the news. What do people in your country discuss when it comes to housing? Tell me about a news story you remember.", "T02Q15", 2, null, 0, "topic", 2],
+  ["T02Q16.mp3", "Opinion / issue", "What are the major problems people face when renting a house or apartment? How do people deal with these issues, and how do they affect where people choose to live?", "T02Q16", 2, null, 0, "topic", 2],
+  ["T02Q17.mp3", "Opinion / issue", "Talk about a specific modern appliance or device that people consider useful or convenient at home. Why do people think this appliance is useful?", "T02Q17", 2, null, 0, "topic", 2],
+  ["T02Q18.mp3", "Compare", "How have home appliances changed our lives? How was life before these appliances different from life now? What is the biggest change?", "T02Q18", 2, null, 0, "topic", 2]
  ],
  "Movies":[
-  ["question-audio/T03Q01.mp3", "Describe", "You indicated that you enjoy watching films. What kinds of movies do you like, and why do you prefer them?", "T03Q01", 3, null, 1, "topic", 3],
-  ["question-audio/T03Q02.mp3", "Past experience", "Tell me about the last time you went to the cinema. Who did you go with, what did you do before and after the film?", "T03Q02", 3, null, 0, "topic", 3],
-  ["question-audio/T03Q03.mp3", "Past experience", "Tell me about a memorable film you watched in the past. What was it about, and what made it so special?", "T03Q03", 3, null, 0, "topic", 3],
-  ["question-audio/T03Q04.mp3", "Describe", "Describe the cinema you usually visit. What is it like? Give me as much detail as possible.", "T03Q04", 3, null, 0, "topic", 3],
-  ["question-audio/T03Q05.mp3", "Compare", "Could you compare the films made today with those you watched growing up? How have films changed over the years?", "T03Q05", 2, null, 0, "topic", 3],
-  ["question-audio/T03Q06.mp3", "Opinion / issue", "When you talk with friends about films, what topics do you usually discuss? Why do those things matter to you?", "T03Q06", 2, null, 0, "topic", 3]
+  ["T03Q01.mp3", "Describe", "You indicated that you enjoy watching films. What kinds of movies do you like, and why do you prefer them?", "T03Q01", 3, null, 1, "topic", 3],
+  ["T03Q02.mp3", "Past experience", "Tell me about the last time you went to the cinema. Who did you go with, what did you do before and after the film?", "T03Q02", 3, null, 0, "topic", 3],
+  ["T03Q03.mp3", "Past experience", "Tell me about a memorable film you watched in the past. What was it about, and what made it so special?", "T03Q03", 3, null, 0, "topic", 3],
+  ["T03Q04.mp3", "Describe", "Describe the cinema you usually visit. What is it like? Give me as much detail as possible.", "T03Q04", 3, null, 0, "topic", 3],
+  ["T03Q05.mp3", "Compare", "Could you compare the films made today with those you watched growing up? How have films changed over the years?", "T03Q05", 2, null, 0, "topic", 3],
+  ["T03Q06.mp3", "Opinion / issue", "When you talk with friends about films, what topics do you usually discuss? Why do those things matter to you?", "T03Q06", 2, null, 0, "topic", 3]
  ],
  "Music":[
-  ["question-audio/T04Q01.mp3", "Describe", "You indicated that you enjoy listening to music. What kinds of music do you listen to, and who are some of your favorite musicians?", "T04Q01", 3, null, 1, "topic", 4],
-  ["question-audio/T04Q02.mp3", "Routine", "When and where do you usually listen to music? Do you listen to the radio or go to concerts? Tell me about the different ways you enjoy music.", "T04Q02", 3, null, 0, "topic", 4],
-  ["question-audio/T04Q03.mp3", "Compare", "When did you first become interested in music? How has your taste developed from childhood to today?", "T04Q03", 3, null, 0, "topic", 4],
-  ["question-audio/T04Q04.mp3", "Past experience", "Think back to a particularly memorable time when you heard live music. When was it, where were you, and what made it so unforgettable?", "T04Q04", 3, null, 0, "topic", 4],
-  ["question-audio/T04Q05.mp3", "Compare", "Pick two different types of music and compare them in detail — what are their similarities and differences?", "T04Q05", 2, null, 0, "topic", 4],
-  ["question-audio/T04Q06.mp3", "Opinion / issue", "What new electronic gadgets or equipment are people who like music interested in these days? What new products excite music lovers?", "T04Q06", 2, null, 0, "topic", 4]
+  ["T04Q01.mp3", "Describe", "You indicated that you enjoy listening to music. What kinds of music do you listen to, and who are some of your favorite musicians?", "T04Q01", 3, null, 1, "topic", 4],
+  ["T04Q02.mp3", "Routine", "When and where do you usually listen to music? Do you listen to the radio or go to concerts? Tell me about the different ways you enjoy music.", "T04Q02", 3, null, 0, "topic", 4],
+  ["T04Q03.mp3", "Compare", "When did you first become interested in music? How has your taste developed from childhood to today?", "T04Q03", 3, null, 0, "topic", 4],
+  ["T04Q04.mp3", "Past experience", "Think back to a particularly memorable time when you heard live music. When was it, where were you, and what made it so unforgettable?", "T04Q04", 3, null, 0, "topic", 4],
+  ["T04Q05.mp3", "Compare", "Pick two different types of music and compare them in detail — what are their similarities and differences?", "T04Q05", 2, null, 0, "topic", 4],
+  ["T04Q06.mp3", "Opinion / issue", "What new electronic gadgets or equipment are people who like music interested in these days? What new products excite music lovers?", "T04Q06", 2, null, 0, "topic", 4]
  ],
  "Parks":[
-  ["question-audio/T05Q01.mp3", "Describe", "You indicated that you enjoy going to parks. What do you like about going to the park? Describe the types of parks you enjoy visiting.", "T05Q01", 3, null, 1, "topic", 5],
-  ["question-audio/T05Q02.mp3", "Past experience", "When was the last time you went to a park? Tell me everything that happened — who you were with, what you did, and how it went.", "T05Q02", 3, null, 0, "topic", 5],
-  ["question-audio/T05Q03.mp3", "Describe", "Tell me about the park you visit most often. Where is it, and what does it look like? Describe it in as much detail as possible.", "T05Q03", 3, null, 0, "topic", 5],
-  ["question-audio/T05Q04.mp3", "Past experience", "How did you first start going to parks? What made you visit parks in the first place, and why do you go to parks now?", "T05Q04", 3, null, 0, "topic", 5],
-  ["question-audio/T05Q05.mp3", "Past experience", "Tell me about a memorable experience you had at a park. Maybe there was a special event, or maybe something unexpected happened.", "T05Q05", 3, null, 0, "topic", 5],
-  ["question-audio/T05Q06.mp3", "Compare", "Pick two popular parks that you know of. Tell me about their similarities and differences.", "T05Q06", 2, null, 0, "topic", 5],
-  ["question-audio/T05Q07.mp3", "Opinion / issue", "I would like to know about one of the issues parks are facing today. What are the challenges public parks are dealing with?", "T05Q07", 2, null, 0, "topic", 5],
-  ["question-audio/T05Q08.mp3", "Compare", "Compare the activities that children do at parks to activities that adults do while they are there. What are the differences?", "T05Q08", 2, null, 0, "topic", 5]
+  ["T05Q01.mp3", "Describe", "You indicated that you enjoy going to parks. What do you like about going to the park? Describe the types of parks you enjoy visiting.", "T05Q01", 3, null, 1, "topic", 5],
+  ["T05Q02.mp3", "Past experience", "When was the last time you went to a park? Tell me everything that happened — who you were with, what you did, and how it went.", "T05Q02", 3, null, 0, "topic", 5],
+  ["T05Q03.mp3", "Describe", "Tell me about the park you visit most often. Where is it, and what does it look like? Describe it in as much detail as possible.", "T05Q03", 3, null, 0, "topic", 5],
+  ["T05Q04.mp3", "Past experience", "How did you first start going to parks? What made you visit parks in the first place, and why do you go to parks now?", "T05Q04", 3, null, 0, "topic", 5],
+  ["T05Q05.mp3", "Past experience", "Tell me about a memorable experience you had at a park. Maybe there was a special event, or maybe something unexpected happened.", "T05Q05", 3, null, 0, "topic", 5],
+  ["T05Q06.mp3", "Compare", "Pick two popular parks that you know of. Tell me about their similarities and differences.", "T05Q06", 2, null, 0, "topic", 5],
+  ["T05Q07.mp3", "Opinion / issue", "I would like to know about one of the issues parks are facing today. What are the challenges public parks are dealing with?", "T05Q07", 2, null, 0, "topic", 5],
+  ["T05Q08.mp3", "Compare", "Compare the activities that children do at parks to activities that adults do while they are there. What are the differences?", "T05Q08", 2, null, 0, "topic", 5]
  ],
  "Walking":[
-  ["question-audio/T06Q01.mp3", "Describe", "You indicated that you enjoy going for walks. Where do you usually go, and what do you like about walking?", "T06Q01", 3, null, 1, "topic", 6],
-  ["question-audio/T06Q02.mp3", "Past experience", "Tell me about the last time you went for a walk. Where did you go, who were you with, and what did you do?", "T06Q02", 3, null, 0, "topic", 6],
-  ["question-audio/T06Q03.mp3", "Compare", "Why did you first start going for walks? How has your interest in walking changed over the years, and why do you walk now?", "T06Q03", 3, null, 0, "topic", 6]
+  ["T06Q01.mp3", "Describe", "You indicated that you enjoy going for walks. Where do you usually go, and what do you like about walking?", "T06Q01", 3, null, 1, "topic", 6],
+  ["T06Q02.mp3", "Past experience", "Tell me about the last time you went for a walk. Where did you go, who were you with, and what did you do?", "T06Q02", 3, null, 0, "topic", 6],
+  ["T06Q03.mp3", "Compare", "Why did you first start going for walks? How has your interest in walking changed over the years, and why do you walk now?", "T06Q03", 3, null, 0, "topic", 6]
  ],
  "Beaches":[
-  ["question-audio/T07Q01.mp3", "Describe", "You indicated that you like going to the beach. Tell me about a beach you enjoy visiting. What does it look like?", "T07Q01", 3, null, 1, "topic", 7],
-  ["question-audio/T07Q02.mp3", "Routine", "What kinds of things do you like to do when you go to the beach? Tell me about your typical beach activities.", "T07Q02", 3, null, 0, "topic", 7],
-  ["question-audio/T07Q03.mp3", "Describe", "Tell me about a particularly memorable or beautiful beach you visited. What did it look like, and what was your impression of the place?", "T07Q03", 3, null, 0, "topic", 7],
-  ["question-audio/T07Q04.mp3", "Past experience", "Tell me about a particularly memorable trip to the beach. Who were you with, what did you do, and what made it special?", "T07Q04", 3, null, 0, "topic", 7]
+  ["T07Q01.mp3", "Describe", "You indicated that you like going to the beach. Tell me about a beach you enjoy visiting. What does it look like?", "T07Q01", 3, null, 1, "topic", 7],
+  ["T07Q02.mp3", "Routine", "What kinds of things do you like to do when you go to the beach? Tell me about your typical beach activities.", "T07Q02", 3, null, 0, "topic", 7],
+  ["T07Q03.mp3", "Describe", "Tell me about a particularly memorable or beautiful beach you visited. What did it look like, and what was your impression of the place?", "T07Q03", 3, null, 0, "topic", 7],
+  ["T07Q04.mp3", "Past experience", "Tell me about a particularly memorable trip to the beach. Who were you with, what did you do, and what made it special?", "T07Q04", 3, null, 0, "topic", 7]
  ],
  "Domestic Trips":[
-  ["question-audio/T08Q01.mp3", "Describe", "You indicated that you enjoy traveling domestically. Where have you been within your country, and what do you enjoy about domestic travel?", "T08Q01", 3, null, 1, "topic", 8],
-  ["question-audio/T08Q02.mp3", "Past experience", "Tell me about your most recent domestic trip. Where did you go, who did you go with, and what did you do?", "T08Q02", 3, null, 0, "topic", 8],
-  ["question-audio/T08Q03.mp3", "Routine", "What kinds of things do you do to prepare for a trip? Walk me through your preparation routine.", "T08Q03", 3, null, 0, "topic", 8],
-  ["question-audio/T08Q04.mp3", "Past experience", "Traveling can lead to many interesting, funny, or unexpected experiences. Tell me about one unforgettable travel experience. When did it happen, where were you, and what made it so memorable?", "T08Q04", 3, null, 0, "topic", 8],
-  ["question-audio/T08Q05.mp3", "Compare", "People often say that traveling has become more difficult in the past five years. What kinds of changes have you noticed while traveling, and how have they affected travelers?", "T08Q05", 2, null, 0, "topic", 8],
-  ["question-audio/T08Q06.mp3", "Opinion / issue", "What are some issues people have regarding trips? What concerns do they typically raise, what causes them, and what's being done about them?", "T08Q06", 2, null, 0, "topic", 8]
+  ["T08Q01.mp3", "Describe", "You indicated that you enjoy traveling domestically. Where have you been within your country, and what do you enjoy about domestic travel?", "T08Q01", 3, null, 1, "topic", 8],
+  ["T08Q02.mp3", "Past experience", "Tell me about your most recent domestic trip. Where did you go, who did you go with, and what did you do?", "T08Q02", 3, null, 0, "topic", 8],
+  ["T08Q03.mp3", "Routine", "What kinds of things do you do to prepare for a trip? Walk me through your preparation routine.", "T08Q03", 3, null, 0, "topic", 8],
+  ["T08Q04.mp3", "Past experience", "Traveling can lead to many interesting, funny, or unexpected experiences. Tell me about one unforgettable travel experience. When did it happen, where were you, and what made it so memorable?", "T08Q04", 3, null, 0, "topic", 8],
+  ["T08Q05.mp3", "Compare", "People often say that traveling has become more difficult in the past five years. What kinds of changes have you noticed while traveling, and how have they affected travelers?", "T08Q05", 2, null, 0, "topic", 8],
+  ["T08Q06.mp3", "Opinion / issue", "What are some issues people have regarding trips? What concerns do they typically raise, what causes them, and what's being done about them?", "T08Q06", 2, null, 0, "topic", 8]
  ],
  "Overseas Trips":[
-  ["question-audio/T09Q01.mp3", "Describe", "Have you been abroad? Where have you traveled, and what was the experience like?", "T09Q01", 3, null, 0, "topic", 9],
-  ["question-audio/T09Q02.mp3", "Past experience", "Tell me about your first trip to another country. When did you go, where did you visit, what did you do, and who did you go with?", "T09Q02", 3, null, 0, "topic", 9],
-  ["question-audio/T09Q03.mp3", "Past experience", "Sometimes something out of the ordinary happens while traveling. Tell me about a surprising, unexpected, or unusual experience during a trip. When and where did it happen, and what exactly took place?", "T09Q03", 3, null, 0, "topic", 9],
-  ["question-audio/T09Q04.mp3", "Describe", "Tell me about a popular place tourists like to visit when traveling outside your country. Why do they like going there?", "T09Q04", 3, null, 0, "topic", 9],
-  ["question-audio/T09Q05.mp3", "Past experience", "Think about another country you visited when you were young. Describe what that country was like, and what your impressions were.", "T09Q05", 3, null, 0, "topic", 9],
-  ["question-audio/T09Q06.mp3", "Compare", "How has traveling to other countries changed over the years? Is it easier or more difficult than before? Describe what international travel was like in the past and what changes you've seen.", "T09Q06", 2, null, 0, "topic", 9],
-  ["question-audio/T09Q07.mp3", "Opinion / issue", "When people discuss traveling to other countries, what are they most interested in seeing or doing? Why are these things so important to travelers?", "T09Q07", 2, null, 0, "topic", 9]
+  ["T09Q01.mp3", "Describe", "Have you been abroad? Where have you traveled, and what was the experience like?", "T09Q01", 3, null, 0, "topic", 9],
+  ["T09Q02.mp3", "Past experience", "Tell me about your first trip to another country. When did you go, where did you visit, what did you do, and who did you go with?", "T09Q02", 3, null, 0, "topic", 9],
+  ["T09Q03.mp3", "Past experience", "Sometimes something out of the ordinary happens while traveling. Tell me about a surprising, unexpected, or unusual experience during a trip. When and where did it happen, and what exactly took place?", "T09Q03", 3, null, 0, "topic", 9],
+  ["T09Q04.mp3", "Describe", "Tell me about a popular place tourists like to visit when traveling outside your country. Why do they like going there?", "T09Q04", 3, null, 0, "topic", 9],
+  ["T09Q05.mp3", "Past experience", "Think about another country you visited when you were young. Describe what that country was like, and what your impressions were.", "T09Q05", 3, null, 0, "topic", 9],
+  ["T09Q06.mp3", "Compare", "How has traveling to other countries changed over the years? Is it easier or more difficult than before? Describe what international travel was like in the past and what changes you've seen.", "T09Q06", 2, null, 0, "topic", 9],
+  ["T09Q07.mp3", "Opinion / issue", "When people discuss traveling to other countries, what are they most interested in seeing or doing? Why are these things so important to travelers?", "T09Q07", 2, null, 0, "topic", 9]
  ],
  "Vacations At Home":[
-  ["question-audio/T10Q01.mp3", "Describe", "Some people choose to stay home during their holidays rather than travel. Do you do this? What do you enjoy about it?", "T10Q01", 3, null, 0, "topic", 10],
-  ["question-audio/T10Q02.mp3", "Past experience", "Describe exactly what you did during your last vacation at home. Walk me through it from the first to the last day, and tell me about the people you saw.", "T10Q02", 3, null, 0, "topic", 10],
-  ["question-audio/T10Q03.mp3", "Past experience", "Could you tell me about an unusual or unexpected experience you had during a vacation at home? What happened, who was involved, and why was it memorable?", "T10Q03", 3, null, 0, "topic", 10]
+  ["T10Q01.mp3", "Describe", "Some people choose to stay home during their holidays rather than travel. Do you do this? What do you enjoy about it?", "T10Q01", 3, null, 0, "topic", 10],
+  ["T10Q02.mp3", "Past experience", "Describe exactly what you did during your last vacation at home. Walk me through it from the first to the last day, and tell me about the people you saw.", "T10Q02", 3, null, 0, "topic", 10],
+  ["T10Q03.mp3", "Past experience", "Could you tell me about an unusual or unexpected experience you had during a vacation at home? What happened, who was involved, and why was it memorable?", "T10Q03", 3, null, 0, "topic", 10]
  ],
  "Bars":[
-  ["question-audio/T11Q01.mp3", "Describe", "Do you ever go to bars? What kind of bars do you enjoy, and what do you typically do when you go?", "T11Q01", 3, null, 0, "topic", 11],
-  ["question-audio/T11Q02.mp3", "Routine", "Describe the bar you go to most often. Tell me everything about that place in detail.", "T11Q02", 3, null, 0, "topic", 11],
-  ["question-audio/T11Q03.mp3", "Past experience", "Tell me about a memorable incident that happened at a bar. What exactly happened, and why was it special?", "T11Q03", 3, null, 0, "topic", 11],
-  ["question-audio/T11Q04.mp3", "Routine", "What do you normally do when you have gatherings at bars with friends? Walk me through what happens when you get together.", "T11Q04", 3, null, 0, "topic", 11],
-  ["question-audio/T11Q05.mp3", "Past experience", "Tell me about a special visit to a bar — perhaps a celebration like a birthday. What did you do before, during, and after?", "T11Q05", 3, null, 0, "topic", 11],
-  ["question-audio/T11Q06.mp3", "Compare", "People nowadays don't go to bars just to drink. What kinds of activities do they do now, and how have bar activities changed over the years?", "T11Q06", 2, null, 0, "topic", 11],
-  ["question-audio/T11Q07.mp3", "Opinion / issue", "The police sometimes have to raid bars for various reasons. Tell me about a news story you saw involving the police and a bar.", "T11Q07", 2, null, 0, "topic", 11]
+  ["T11Q01.mp3", "Describe", "Do you ever go to bars? What kind of bars do you enjoy, and what do you typically do when you go?", "T11Q01", 3, null, 0, "topic", 11],
+  ["T11Q02.mp3", "Routine", "Describe the bar you go to most often. Tell me everything about that place in detail.", "T11Q02", 3, null, 0, "topic", 11],
+  ["T11Q03.mp3", "Past experience", "Tell me about a memorable incident that happened at a bar. What exactly happened, and why was it special?", "T11Q03", 3, null, 0, "topic", 11],
+  ["T11Q04.mp3", "Routine", "What do you normally do when you have gatherings at bars with friends? Walk me through what happens when you get together.", "T11Q04", 3, null, 0, "topic", 11],
+  ["T11Q05.mp3", "Past experience", "Tell me about a special visit to a bar — perhaps a celebration like a birthday. What did you do before, during, and after?", "T11Q05", 3, null, 0, "topic", 11],
+  ["T11Q06.mp3", "Compare", "People nowadays don't go to bars just to drink. What kinds of activities do they do now, and how have bar activities changed over the years?", "T11Q06", 2, null, 0, "topic", 11],
+  ["T11Q07.mp3", "Opinion / issue", "The police sometimes have to raid bars for various reasons. Tell me about a news story you saw involving the police and a bar.", "T11Q07", 2, null, 0, "topic", 11]
  ],
  "Restaurants":[
-  ["question-audio/T12Q01.mp3", "Describe", "Tell me about the kinds of restaurants you like to visit. What do you enjoy about them?", "T12Q01", 3, null, 0, "topic", 12],
-  ["question-audio/T12Q02.mp3", "Past experience", "Tell me about a memorable experience you had at a restaurant. What happened, and why do you remember it so well?", "T12Q02", 3, null, 0, "topic", 12],
-  ["question-audio/T12Q03.mp3", "Past experience", "Talk about the last time you used a take-away or food-delivery service. Where did you order from, and how did it go?", "T12Q03", 3, null, 0, "topic", 12],
-  ["question-audio/T12Q04.mp3", "Past experience", "Tell me about a time you used a take-away or delivery service to prepare for a special occasion. What did you order, and how did it go?", "T12Q04", 3, null, 0, "topic", 12],
-  ["question-audio/T12Q05.mp3", "Opinion / issue", "Many restaurants are adapting their menus to suit more health-conscious customers. What changes have you noticed in restaurants in your country?", "T12Q05", 2, null, 0, "topic", 12],
-  ["question-audio/T12Q06.mp3", "Compare", "Chain restaurants and small local restaurants offer very different experiences. Tell me about your experience of both, and what the biggest difference is.", "T12Q06", 2, null, 0, "topic", 12],
-  ["question-audio/T12Q07.mp3", "Compare", "What changes have you noticed in restaurants or eating out over the past few years? How was eating out different in the past, and what's brought about these changes?", "T12Q07", 2, null, 0, "topic", 12],
-  ["question-audio/T12Q08.mp3", "Opinion / issue", "When your friends or family discuss restaurants they like or dislike, what aspects do they talk about most? How do those things affect the dining experience?", "T12Q08", 2, null, 0, "topic", 12],
-  ["question-audio/T12Q09.mp3", "Opinion / issue", "Many fast-food and delivery restaurants now offer healthier choices. Why do you think this change has happened in recent years — consumer pressure, market forces, or something else?", "T12Q09", 2, null, 0, "topic", 12],
-  ["question-audio/T12Q10.mp3", "Opinion / issue", "What are the latest trends in take-away or delivery food that people are talking about? Perhaps it's about ordering apps, new menus, or something else.", "T12Q10", 2, null, 0, "topic", 12],
-  ["question-audio/T12Q11.mp3", "Opinion / issue", "How do busy working people usually get their meals on weekdays? Do they order in, eat out, or do something else?", "T12Q11", 2, null, 0, "topic", 12]
+  ["T12Q01.mp3", "Describe", "Tell me about the kinds of restaurants you like to visit. What do you enjoy about them?", "T12Q01", 3, null, 0, "topic", 12],
+  ["T12Q02.mp3", "Past experience", "Tell me about a memorable experience you had at a restaurant. What happened, and why do you remember it so well?", "T12Q02", 3, null, 0, "topic", 12],
+  ["T12Q03.mp3", "Past experience", "Talk about the last time you used a take-away or food-delivery service. Where did you order from, and how did it go?", "T12Q03", 3, null, 0, "topic", 12],
+  ["T12Q04.mp3", "Past experience", "Tell me about a time you used a take-away or delivery service to prepare for a special occasion. What did you order, and how did it go?", "T12Q04", 3, null, 0, "topic", 12],
+  ["T12Q05.mp3", "Opinion / issue", "Many restaurants are adapting their menus to suit more health-conscious customers. What changes have you noticed in restaurants in your country?", "T12Q05", 2, null, 0, "topic", 12],
+  ["T12Q06.mp3", "Compare", "Chain restaurants and small local restaurants offer very different experiences. Tell me about your experience of both, and what the biggest difference is.", "T12Q06", 2, null, 0, "topic", 12],
+  ["T12Q07.mp3", "Compare", "What changes have you noticed in restaurants or eating out over the past few years? How was eating out different in the past, and what's brought about these changes?", "T12Q07", 2, null, 0, "topic", 12],
+  ["T12Q08.mp3", "Opinion / issue", "When your friends or family discuss restaurants they like or dislike, what aspects do they talk about most? How do those things affect the dining experience?", "T12Q08", 2, null, 0, "topic", 12],
+  ["T12Q09.mp3", "Opinion / issue", "Many fast-food and delivery restaurants now offer healthier choices. Why do you think this change has happened in recent years — consumer pressure, market forces, or something else?", "T12Q09", 2, null, 0, "topic", 12],
+  ["T12Q10.mp3", "Opinion / issue", "What are the latest trends in take-away or delivery food that people are talking about? Perhaps it's about ordering apps, new menus, or something else.", "T12Q10", 2, null, 0, "topic", 12],
+  ["T12Q11.mp3", "Opinion / issue", "How do busy working people usually get their meals on weekdays? Do they order in, eat out, or do something else?", "T12Q11", 2, null, 0, "topic", 12]
  ],
  "Coffee Shops":[
-  ["question-audio/T13Q01.mp3", "Routine", "Do you enjoy going to coffee shops? What do you like about them, and what do you usually do when you're there?", "T13Q01", 3, null, 0, "topic", 13],
-  ["question-audio/T13Q02.mp3", "Routine", "What do you normally do when you go to coffee shops? Are there meetings or gatherings there?", "T13Q02", 3, null, 0, "topic", 13],
-  ["question-audio/T13Q03.mp3", "Past experience", "Tell me about a memorable incident that happened at a coffee shop. What happened, who was involved, and how did it unfold?", "T13Q03", 3, null, 0, "topic", 13],
-  ["question-audio/T13Q04.mp3", "Past experience", "Talk about the first coffee shop you ever went to. What was special about that place, and what do you remember most?", "T13Q04", 3, null, 0, "topic", 13]
+  ["T13Q01.mp3", "Routine", "Do you enjoy going to coffee shops? What do you like about them, and what do you usually do when you're there?", "T13Q01", 3, null, 0, "topic", 13],
+  ["T13Q02.mp3", "Routine", "What do you normally do when you go to coffee shops? Are there meetings or gatherings there?", "T13Q02", 3, null, 0, "topic", 13],
+  ["T13Q03.mp3", "Past experience", "Tell me about a memorable incident that happened at a coffee shop. What happened, who was involved, and how did it unfold?", "T13Q03", 3, null, 0, "topic", 13],
+  ["T13Q04.mp3", "Past experience", "Talk about the first coffee shop you ever went to. What was special about that place, and what do you remember most?", "T13Q04", 3, null, 0, "topic", 13]
  ],
  "Gatherings":[
-  ["question-audio/T14Q01.mp3", "Describe", "Tell me about gatherings and celebrations in your country. What do people typically do when they get together to celebrate?", "T14Q01", 3, null, 0, "topic", 14],
-  ["question-audio/T14Q02.mp3", "Past experience", "What did you do at your last gathering or celebration? What was the occasion, and what made it special?", "T14Q02", 3, null, 0, "topic", 14],
-  ["question-audio/T14Q03.mp3", "Past experience", "Tell me about a memorable incident that happened at a gathering or celebration. Why was it so unforgettable?", "T14Q03", 3, null, 0, "topic", 14],
-  ["question-audio/T14Q04.mp3", "Describe", "Where do people usually have celebrations or parties in your area? Is it at someone's home, a park, or somewhere else? Describe the place in detail.", "T14Q04", 3, null, 0, "topic", 14],
-  ["question-audio/T14Q05.mp3", "Compare", "How were gatherings or celebrations when you were a child? How are they different from now? What kinds of events are more popular recently?", "T14Q05", 2, null, 0, "topic", 14],
-  ["question-audio/T14Q06.mp3", "Opinion / issue", "Gatherings and celebrations are important to people in a city, but organizing them takes time, energy, and money. What issues do people talk about when organizing these events?", "T14Q06", 2, null, 0, "topic", 14],
-  ["question-audio/T14Q07.mp3", "Compare", "Gatherings in small towns are often different from those in big cities. Tell me about the similarities and differences between celebrations in small towns and big cities in your country.", "T14Q07", 2, null, 0, "topic", 14],
-  ["question-audio/T14Q08.mp3", "Opinion / issue", "What kinds of concerns do you hear people express about gatherings in your area? Do people complain about traffic, parking, noise, or other issues?", "T14Q08", 2, null, 0, "topic", 14]
+  ["T14Q01.mp3", "Describe", "Tell me about gatherings and celebrations in your country. What do people typically do when they get together to celebrate?", "T14Q01", 3, null, 0, "topic", 14],
+  ["T14Q02.mp3", "Past experience", "What did you do at your last gathering or celebration? What was the occasion, and what made it special?", "T14Q02", 3, null, 0, "topic", 14],
+  ["T14Q03.mp3", "Past experience", "Tell me about a memorable incident that happened at a gathering or celebration. Why was it so unforgettable?", "T14Q03", 3, null, 0, "topic", 14],
+  ["T14Q04.mp3", "Describe", "Where do people usually have celebrations or parties in your area? Is it at someone's home, a park, or somewhere else? Describe the place in detail.", "T14Q04", 3, null, 0, "topic", 14],
+  ["T14Q05.mp3", "Compare", "How were gatherings or celebrations when you were a child? How are they different from now? What kinds of events are more popular recently?", "T14Q05", 2, null, 0, "topic", 14],
+  ["T14Q06.mp3", "Opinion / issue", "Gatherings and celebrations are important to people in a city, but organizing them takes time, energy, and money. What issues do people talk about when organizing these events?", "T14Q06", 2, null, 0, "topic", 14],
+  ["T14Q07.mp3", "Compare", "Gatherings in small towns are often different from those in big cities. Tell me about the similarities and differences between celebrations in small towns and big cities in your country.", "T14Q07", 2, null, 0, "topic", 14],
+  ["T14Q08.mp3", "Opinion / issue", "What kinds of concerns do you hear people express about gatherings in your area? Do people complain about traffic, parking, noise, or other issues?", "T14Q08", 2, null, 0, "topic", 14]
  ],
  "Food":[
-  ["question-audio/T15Q01.mp3", "Describe", "What are some popular dishes in your country? Tell me about one dish in particular — what is it, and what makes it so special?", "T15Q01", 3, null, 0, "topic", 15],
-  ["question-audio/T15Q02.mp3", "Routine", "What do you eat on a typical day? Tell me everything in detail.", "T15Q02", 3, null, 0, "topic", 15],
-  ["question-audio/T15Q03.mp3", "Past experience", "Tell me about a memorable experience you had while eating something. It could be something good or bad. What happened, and why was it so special?", "T15Q03", 3, null, 0, "topic", 15],
-  ["question-audio/T15Q04.mp3", "Past experience", "When was the last time you had healthy food? Who were you with, and how did you feel? What was special about that experience?", "T15Q04", 3, null, 0, "topic", 15],
-  ["question-audio/T15Q05.mp3", "Compare", "How has food shopping changed over the last 20 years? What are the changes in how people buy their food?", "T15Q05", 2, null, 0, "topic", 15],
-  ["question-audio/T15Q06.mp3", "Opinion / issue", "There are sometimes news reports about food safety. Food can be contaminated or affected by dangerous bacteria. Tell me about a news report you watched regarding a food safety incident.", "T15Q06", 2, null, 0, "topic", 15]
+  ["T15Q01.mp3", "Describe", "What are some popular dishes in your country? Tell me about one dish in particular — what is it, and what makes it so special?", "T15Q01", 3, null, 0, "topic", 15],
+  ["T15Q02.mp3", "Routine", "What do you eat on a typical day? Tell me everything in detail.", "T15Q02", 3, null, 0, "topic", 15],
+  ["T15Q03.mp3", "Past experience", "Tell me about a memorable experience you had while eating something. It could be something good or bad. What happened, and why was it so special?", "T15Q03", 3, null, 0, "topic", 15],
+  ["T15Q04.mp3", "Past experience", "When was the last time you had healthy food? Who were you with, and how did you feel? What was special about that experience?", "T15Q04", 3, null, 0, "topic", 15],
+  ["T15Q05.mp3", "Compare", "How has food shopping changed over the last 20 years? What are the changes in how people buy their food?", "T15Q05", 2, null, 0, "topic", 15],
+  ["T15Q06.mp3", "Opinion / issue", "There are sometimes news reports about food safety. Food can be contaminated or affected by dangerous bacteria. Tell me about a news report you watched regarding a food safety incident.", "T15Q06", 2, null, 0, "topic", 15]
  ],
  "Health":[
-  ["question-audio/T16Q01.mp3", "Compare", "How have people's ideas about health and healthy living changed over time? What did people do to stay healthy when you were a child, and how is it different from today?", "T16Q01", 3, null, 0, "topic", 16],
-  ["question-audio/T16Q02.mp3", "Describe", "Describe a healthy person you know. What makes them so healthy, and what habits do they maintain?", "T16Q02", 3, null, 0, "topic", 16],
-  ["question-audio/T16Q03.mp3", "Past experience", "Have you ever changed a habit or part of your lifestyle for your health? Maybe you started working out or eating healthier. Tell me about that change.", "T16Q03", 3, null, 0, "topic", 16],
-  ["question-audio/T16Q04.mp3", "Past experience", "Talk about one specific thing you did for your health. What kind of impact did it have, and how did it affect you?", "T16Q04", 3, null, 0, "topic", 16],
-  ["question-audio/T16Q05.mp3", "Compare", "Different generations have different views on what is healthy. Some think people have to be skinny to be healthy, while others believe they need to be muscular. What did your parents and grandparents think, and how is that different from today?", "T16Q05", 2, null, 0, "topic", 16],
-  ["question-audio/T16Q06.mp3", "Opinion / issue", "Tell me about a recent news story you saw related to health issues. What was it about, and how did your community react?", "T16Q06", 2, null, 0, "topic", 16],
-  ["question-audio/T16Q07.mp3", "Compare", "Tell me about the gym you used to go to in the past. What was it like, what facilities did it have, and how is it different from the gym you go to today?", "T16Q07", 2, null, 0, "topic", 16]
+  ["T16Q01.mp3", "Compare", "How have people's ideas about health and healthy living changed over time? What did people do to stay healthy when you were a child, and how is it different from today?", "T16Q01", 3, null, 0, "topic", 16],
+  ["T16Q02.mp3", "Describe", "Describe a healthy person you know. What makes them so healthy, and what habits do they maintain?", "T16Q02", 3, null, 0, "topic", 16],
+  ["T16Q03.mp3", "Past experience", "Have you ever changed a habit or part of your lifestyle for your health? Maybe you started working out or eating healthier. Tell me about that change.", "T16Q03", 3, null, 0, "topic", 16],
+  ["T16Q04.mp3", "Past experience", "Talk about one specific thing you did for your health. What kind of impact did it have, and how did it affect you?", "T16Q04", 3, null, 0, "topic", 16],
+  ["T16Q05.mp3", "Compare", "Different generations have different views on what is healthy. Some think people have to be skinny to be healthy, while others believe they need to be muscular. What did your parents and grandparents think, and how is that different from today?", "T16Q05", 2, null, 0, "topic", 16],
+  ["T16Q06.mp3", "Opinion / issue", "Tell me about a recent news story you saw related to health issues. What was it about, and how did your community react?", "T16Q06", 2, null, 0, "topic", 16],
+  ["T16Q07.mp3", "Compare", "Tell me about the gym you used to go to in the past. What was it like, what facilities did it have, and how is it different from the gym you go to today?", "T16Q07", 2, null, 0, "topic", 16]
  ],
  "Internet":[
-  ["question-audio/T17Q01.mp3", "Routine", "What do people normally do on the internet? What kinds of activities are most common?", "T17Q01", 3, null, 0, "topic", 17],
-  ["question-audio/T17Q02.mp3", "Routine", "What do you personally do on the internet? Do you shop online or share videos? Tell me about all your online activities.", "T17Q02", 3, null, 0, "topic", 17],
-  ["question-audio/T17Q03.mp3", "Past experience", "Tell me about your early experience of using the internet. What do you particularly remember about it?", "T17Q03", 3, null, 0, "topic", 17],
-  ["question-audio/T17Q04.mp3", "Past experience", "I'm sure you have things you remember seeing on the internet. Talk about a memorable post you saw online. Why was it memorable?", "T17Q04", 3, null, 0, "topic", 17],
-  ["question-audio/T17Q05.mp3", "Opinion / issue", "What kinds of concerns do people have about internet use nowadays? They could be about safety, privacy, or security. How have these concerns affected people's lives?", "T17Q05", 2, null, 0, "topic", 17],
-  ["question-audio/T17Q06.mp3", "Compare", "How is internet usage different among people in different age groups? How do young people use the internet differently from older people?", "T17Q06", 2, null, 0, "topic", 17]
+  ["T17Q01.mp3", "Routine", "What do people normally do on the internet? What kinds of activities are most common?", "T17Q01", 3, null, 0, "topic", 17],
+  ["T17Q02.mp3", "Routine", "What do you personally do on the internet? Do you shop online or share videos? Tell me about all your online activities.", "T17Q02", 3, null, 0, "topic", 17],
+  ["T17Q03.mp3", "Past experience", "Tell me about your early experience of using the internet. What do you particularly remember about it?", "T17Q03", 3, null, 0, "topic", 17],
+  ["T17Q04.mp3", "Past experience", "I'm sure you have things you remember seeing on the internet. Talk about a memorable post you saw online. Why was it memorable?", "T17Q04", 3, null, 0, "topic", 17],
+  ["T17Q05.mp3", "Opinion / issue", "What kinds of concerns do people have about internet use nowadays? They could be about safety, privacy, or security. How have these concerns affected people's lives?", "T17Q05", 2, null, 0, "topic", 17],
+  ["T17Q06.mp3", "Compare", "How is internet usage different among people in different age groups? How do young people use the internet differently from older people?", "T17Q06", 2, null, 0, "topic", 17]
  ],
  "Phones":[
-  ["question-audio/T18Q01.mp3", "Describe", "What do you like most about your phone? Maybe you love the camera or certain applications. Tell me why you like those features.", "T18Q01", 3, null, 0, "topic", 18],
-  ["question-audio/T18Q02.mp3", "Routine", "What do you do on your phone besides talking? Do you update your social media or play games? Tell me everything.", "T18Q02", 3, null, 0, "topic", 18],
-  ["question-audio/T18Q03.mp3", "Routine", "I'd like to know about the phone calls that you make. What kinds of things do you talk about with your friends over the phone?", "T18Q03", 3, null, 0, "topic", 18],
-  ["question-audio/T18Q04.mp3", "Past experience", "How did you choose your current phone? Did someone recommend it? What were the main things that made you buy that phone?", "T18Q04", 3, null, 0, "topic", 18],
-  ["question-audio/T18Q05.mp3", "Compare", "Describe how people used cell phones five years ago. What did they do with their phones and apps then? What are some of the biggest changes in how people use phones today?", "T18Q05", 2, null, 0, "topic", 18],
-  ["question-audio/T18Q06.mp3", "Opinion / issue", "In some societies, there is concern that young people aren't developing face-to-face communication skills because they spend too much time on their phones. What do people in your country think about this?", "T18Q06", 2, null, 0, "topic", 18]
+  ["T18Q01.mp3", "Describe", "What do you like most about your phone? Maybe you love the camera or certain applications. Tell me why you like those features.", "T18Q01", 3, null, 0, "topic", 18],
+  ["T18Q02.mp3", "Routine", "What do you do on your phone besides talking? Do you update your social media or play games? Tell me everything.", "T18Q02", 3, null, 0, "topic", 18],
+  ["T18Q03.mp3", "Routine", "I'd like to know about the phone calls that you make. What kinds of things do you talk about with your friends over the phone?", "T18Q03", 3, null, 0, "topic", 18],
+  ["T18Q04.mp3", "Past experience", "How did you choose your current phone? Did someone recommend it? What were the main things that made you buy that phone?", "T18Q04", 3, null, 0, "topic", 18],
+  ["T18Q05.mp3", "Compare", "Describe how people used cell phones five years ago. What did they do with their phones and apps then? What are some of the biggest changes in how people use phones today?", "T18Q05", 2, null, 0, "topic", 18],
+  ["T18Q06.mp3", "Opinion / issue", "In some societies, there is concern that young people aren't developing face-to-face communication skills because they spend too much time on their phones. What do people in your country think about this?", "T18Q06", 2, null, 0, "topic", 18]
  ],
  "Technology":[
-  ["question-audio/T19Q01.mp3", "Describe", "What kinds of technology do people typically use in your country? What are the most common forms of technology?", "T19Q01", 3, null, 0, "topic", 19],
-  ["question-audio/T19Q02.mp3", "Routine", "What piece of technology do you use most often? Tell me about the typical technology you use every day.", "T19Q02", 3, null, 0, "topic", 19],
-  ["question-audio/T19Q03.mp3", "Compare", "Technology has definitely changed over time. Tell me about an early memory you have of a piece of technology. How has it changed?", "T19Q03", 3, null, 0, "topic", 19],
-  ["question-audio/T19Q04.mp3", "Past experience", "Problems often come up because of our dependence on technology. Think about a time you experienced a problem because a piece of technology wasn't working properly. What happened?", "T19Q04", 3, null, 0, "topic", 19]
+  ["T19Q01.mp3", "Describe", "What kinds of technology do people typically use in your country? What are the most common forms of technology?", "T19Q01", 3, null, 0, "topic", 19],
+  ["T19Q02.mp3", "Routine", "What piece of technology do you use most often? Tell me about the typical technology you use every day.", "T19Q02", 3, null, 0, "topic", 19],
+  ["T19Q03.mp3", "Compare", "Technology has definitely changed over time. Tell me about an early memory you have of a piece of technology. How has it changed?", "T19Q03", 3, null, 0, "topic", 19],
+  ["T19Q04.mp3", "Past experience", "Problems often come up because of our dependence on technology. Think about a time you experienced a problem because a piece of technology wasn't working properly. What happened?", "T19Q04", 3, null, 0, "topic", 19]
  ],
  "Shopping":[
-  ["question-audio/T20Q01.mp3", "Routine", "Where do you usually go when you need to buy something? What do you typically buy, and what do you like about that place?", "T20Q01", 3, null, 0, "topic", 20],
-  ["question-audio/T20Q02.mp3", "Past experience", "Think of your early memories of shopping. Was there a store you remember from your childhood? What did it look like, and what was your impression?", "T20Q02", 3, null, 0, "topic", 20],
-  ["question-audio/T20Q03.mp3", "Past experience", "Sometimes funny or unexpected things happen while shopping. Tell me about a memorable shopping experience.", "T20Q03", 3, null, 0, "topic", 20],
-  ["question-audio/T20Q04.mp3", "Past experience", "When was the last time you went shopping? Where did you go, what did you buy, and who did you go with?", "T20Q04", 3, null, 0, "topic", 20],
-  ["question-audio/T20Q05.mp3", "Compare", "Shopping has changed a lot over the years. What are some significant changes in people's shopping habits?", "T20Q05", 2, null, 0, "topic", 20],
-  ["question-audio/T20Q06.mp3", "Opinion / issue", "What kinds of products or services do you hear shoppers talking about these days? Why are they generating so much interest?", "T20Q06", 2, null, 0, "topic", 20]
+  ["T20Q01.mp3", "Routine", "Where do you usually go when you need to buy something? What do you typically buy, and what do you like about that place?", "T20Q01", 3, null, 0, "topic", 20],
+  ["T20Q02.mp3", "Past experience", "Think of your early memories of shopping. Was there a store you remember from your childhood? What did it look like, and what was your impression?", "T20Q02", 3, null, 0, "topic", 20],
+  ["T20Q03.mp3", "Past experience", "Sometimes funny or unexpected things happen while shopping. Tell me about a memorable shopping experience.", "T20Q03", 3, null, 0, "topic", 20],
+  ["T20Q04.mp3", "Past experience", "When was the last time you went shopping? Where did you go, what did you buy, and who did you go with?", "T20Q04", 3, null, 0, "topic", 20],
+  ["T20Q05.mp3", "Compare", "Shopping has changed a lot over the years. What are some significant changes in people's shopping habits?", "T20Q05", 2, null, 0, "topic", 20],
+  ["T20Q06.mp3", "Opinion / issue", "What kinds of products or services do you hear shoppers talking about these days? Why are they generating so much interest?", "T20Q06", 2, null, 0, "topic", 20]
  ],
  "Fashion":[
-  ["question-audio/T21Q01.mp3", "Describe", "What kinds of clothes do people in your country typically wear? Do they dress differently for work versus leisure?", "T21Q01", 3, null, 0, "topic", 21],
-  ["question-audio/T21Q02.mp3", "Describe", "What kinds of clothes do you like to wear? What's your fashion style, and what are you wearing today?", "T21Q02", 3, null, 0, "topic", 21],
-  ["question-audio/T21Q03.mp3", "Compare", "Fashion is always changing. Tell me about the clothes that were popular when you were younger. How were they different from what's popular today?", "T21Q03", 3, null, 0, "topic", 21],
-  ["question-audio/T21Q04.mp3", "Past experience", "Tell me about the last time you bought a new piece of clothing. What did you need to buy, where did you find it, and were there any challenges?", "T21Q04", 3, null, 0, "topic", 21]
+  ["T21Q01.mp3", "Describe", "What kinds of clothes do people in your country typically wear? Do they dress differently for work versus leisure?", "T21Q01", 3, null, 0, "topic", 21],
+  ["T21Q02.mp3", "Describe", "What kinds of clothes do you like to wear? What's your fashion style, and what are you wearing today?", "T21Q02", 3, null, 0, "topic", 21],
+  ["T21Q03.mp3", "Compare", "Fashion is always changing. Tell me about the clothes that were popular when you were younger. How were they different from what's popular today?", "T21Q03", 3, null, 0, "topic", 21],
+  ["T21Q04.mp3", "Past experience", "Tell me about the last time you bought a new piece of clothing. What did you need to buy, where did you find it, and were there any challenges?", "T21Q04", 3, null, 0, "topic", 21]
  ],
  "Furniture":[
-  ["question-audio/T22Q01.mp3", "Describe", "Tell me about the furniture you have at home. Is there a particular piece you love most?", "T22Q01", 3, null, 0, "topic", 22],
-  ["question-audio/T22Q02.mp3", "Routine", "Tell me about how you use your furniture on a typical day. What kinds of things do you do with it?", "T22Q02", 3, null, 0, "topic", 22],
-  ["question-audio/T22Q03.mp3", "Compare", "Tell me about the furniture you had at home when you were a child. Was it different from the furniture you use today?", "T22Q03", 3, null, 0, "topic", 22],
-  ["question-audio/T22Q04.mp3", "Past experience", "Tell me about a time you had a problem with your furniture. What happened, and how did you solve it?", "T22Q04", 3, null, 0, "topic", 22]
+  ["T22Q01.mp3", "Describe", "Tell me about the furniture you have at home. Is there a particular piece you love most?", "T22Q01", 3, null, 0, "topic", 22],
+  ["T22Q02.mp3", "Routine", "Tell me about how you use your furniture on a typical day. What kinds of things do you do with it?", "T22Q02", 3, null, 0, "topic", 22],
+  ["T22Q03.mp3", "Compare", "Tell me about the furniture you had at home when you were a child. Was it different from the furniture you use today?", "T22Q03", 3, null, 0, "topic", 22],
+  ["T22Q04.mp3", "Past experience", "Tell me about a time you had a problem with your furniture. What happened, and how did you solve it?", "T22Q04", 3, null, 0, "topic", 22]
  ],
  "Weather":[
-  ["question-audio/T23Q01.mp3", "Describe", "Tell me about the weather where you live. What is it like in each season, and which season do you enjoy most?", "T23Q01", 3, null, 0, "topic", 23],
-  ["question-audio/T23Q02.mp3", "Describe", "How is the weather today where you are? Is it cold, warm, or something in between? Talk about today's weather in detail.", "T23Q02", 3, null, 0, "topic", 23],
-  ["question-audio/T23Q03.mp3", "Past experience", "Severe weather can cause a lot of damage. Tell me about an experience you had related to severe weather. What was the problem, and how did people respond?", "T23Q03", 3, null, 0, "topic", 23],
-  ["question-audio/T23Q04.mp3", "Compare", "How has the weather in your country changed over the years? What was the weather like when you were a child, and how is it different now?", "T23Q04", 3, null, 0, "topic", 23]
+  ["T23Q01.mp3", "Describe", "Tell me about the weather where you live. What is it like in each season, and which season do you enjoy most?", "T23Q01", 3, null, 0, "topic", 23],
+  ["T23Q02.mp3", "Describe", "How is the weather today where you are? Is it cold, warm, or something in between? Talk about today's weather in detail.", "T23Q02", 3, null, 0, "topic", 23],
+  ["T23Q03.mp3", "Past experience", "Severe weather can cause a lot of damage. Tell me about an experience you had related to severe weather. What was the problem, and how did people respond?", "T23Q03", 3, null, 0, "topic", 23],
+  ["T23Q04.mp3", "Compare", "How has the weather in your country changed over the years? What was the weather like when you were a child, and how is it different now?", "T23Q04", 3, null, 0, "topic", 23]
  ],
  "Transportation":[
-  ["question-audio/T24Q01.mp3", "Describe", "Tell me about how people get around in your country. What are the most common means of transportation?", "T24Q01", 3, null, 0, "topic", 24],
-  ["question-audio/T24Q02.mp3", "Routine", "What means of transportation do you personally use to get around? Do you drive your own car or take public transport?", "T24Q02", 3, null, 0, "topic", 24],
-  ["question-audio/T24Q03.mp3", "Compare", "How did you travel when you were a child? Were the types of transportation different back then? Describe how people used to get around in your city.", "T24Q03", 3, null, 0, "topic", 24],
-  ["question-audio/T24Q04.mp3", "Past experience", "Transportation problems sometimes come up — cars break down, trains run late, or traffic gets bad. Tell me about a transportation problem you had and how you dealt with it.", "T24Q04", 3, null, 0, "topic", 24]
+  ["T24Q01.mp3", "Describe", "Tell me about how people get around in your country. What are the most common means of transportation?", "T24Q01", 3, null, 0, "topic", 24],
+  ["T24Q02.mp3", "Routine", "What means of transportation do you personally use to get around? Do you drive your own car or take public transport?", "T24Q02", 3, null, 0, "topic", 24],
+  ["T24Q03.mp3", "Compare", "How did you travel when you were a child? Were the types of transportation different back then? Describe how people used to get around in your city.", "T24Q03", 3, null, 0, "topic", 24],
+  ["T24Q04.mp3", "Past experience", "Transportation problems sometimes come up — cars break down, trains run late, or traffic gets bad. Tell me about a transportation problem you had and how you dealt with it.", "T24Q04", 3, null, 0, "topic", 24]
  ],
  "Holidays":[
-  ["question-audio/T25Q01.mp3", "Describe", "Tell me about some popular holidays in your country. Where do people celebrate them, and what do they typically do?", "T25Q01", 3, null, 0, "topic", 25],
-  ["question-audio/T25Q02.mp3", "Past experience", "Talk about a holiday memory from your childhood. Where were you, what did the place look like, and what do you remember most clearly?", "T25Q02", 3, null, 0, "topic", 25],
-  ["question-audio/T25Q03.mp3", "Past experience", "Talk about the most recent holiday you celebrated. Why was it memorable, and was there anything special about it?", "T25Q03", 3, null, 0, "topic", 25],
-  ["question-audio/T25Q04.mp3", "Describe", "What are some holidays in your country? What do people typically do during them, and what's special about them?", "T25Q04", 3, null, 0, "topic", 25],
-  ["question-audio/T25Q05.mp3", "Opinion / issue", "What are some issues or concerns people have regarding holidays? What do people do to address those issues?", "T25Q05", 2, null, 0, "topic", 25]
+  ["T25Q01.mp3", "Describe", "Tell me about some popular holidays in your country. Where do people celebrate them, and what do they typically do?", "T25Q01", 3, null, 0, "topic", 25],
+  ["T25Q02.mp3", "Past experience", "Talk about a holiday memory from your childhood. Where were you, what did the place look like, and what do you remember most clearly?", "T25Q02", 3, null, 0, "topic", 25],
+  ["T25Q03.mp3", "Past experience", "Talk about the most recent holiday you celebrated. Why was it memorable, and was there anything special about it?", "T25Q03", 3, null, 0, "topic", 25],
+  ["T25Q04.mp3", "Describe", "What are some holidays in your country? What do people typically do during them, and what's special about them?", "T25Q04", 3, null, 0, "topic", 25],
+  ["T25Q05.mp3", "Opinion / issue", "What are some issues or concerns people have regarding holidays? What do people do to address those issues?", "T25Q05", 2, null, 0, "topic", 25]
  ],
  "Banks":[
-  ["question-audio/T26Q01.mp3", "Describe", "Tell me about the banks in your country. What do they typically look like, and where are they usually located?", "T26Q01", 3, null, 0, "topic", 26],
-  ["question-audio/T26Q02.mp3", "Routine", "Tell me what goes on when you visit the bank. What do you do from the moment you walk in until you leave?", "T26Q02", 3, null, 0, "topic", 26],
-  ["question-audio/T26Q03.mp3", "Compare", "Banks have definitely changed over time. Tell me about a bank you remember from your childhood. How was it different from banks today?", "T26Q03", 3, null, 0, "topic", 26],
-  ["question-audio/T26Q04.mp3", "Past experience", "Sometimes problems happen at the bank. Tell me about a problem you had — maybe the bank was closed or made a mistake. What happened, and how did you solve it?", "T26Q04", 3, null, 0, "topic", 26]
+  ["T26Q01.mp3", "Describe", "Tell me about the banks in your country. What do they typically look like, and where are they usually located?", "T26Q01", 3, null, 0, "topic", 26],
+  ["T26Q02.mp3", "Routine", "Tell me what goes on when you visit the bank. What do you do from the moment you walk in until you leave?", "T26Q02", 3, null, 0, "topic", 26],
+  ["T26Q03.mp3", "Compare", "Banks have definitely changed over time. Tell me about a bank you remember from your childhood. How was it different from banks today?", "T26Q03", 3, null, 0, "topic", 26],
+  ["T26Q04.mp3", "Past experience", "Sometimes problems happen at the bank. Tell me about a problem you had — maybe the bank was closed or made a mistake. What happened, and how did you solve it?", "T26Q04", 3, null, 0, "topic", 26]
  ],
  "Appointments":[
-  ["question-audio/T27Q01.mp3", "Describe", "What kinds of appointments do you make in your life? How do you arrange them, and where do you typically go?", "T27Q01", 3, null, 0, "topic", 27],
-  ["question-audio/T27Q02.mp3", "Routine", "What kinds of things do you do when you make appointments? Walk me through the process.", "T27Q02", 3, null, 0, "topic", 27],
-  ["question-audio/T27Q03.mp3", "Past experience", "Talk about an appointment you made as a child. What was it for, and what happened?", "T27Q03", 3, null, 0, "topic", 27],
-  ["question-audio/T27Q04.mp3", "Past experience", "Unexpected things can happen with appointments. Tell me about a memorable incident — what happened, and how did you deal with it?", "T27Q04", 3, null, 0, "topic", 27]
+  ["T27Q01.mp3", "Describe", "What kinds of appointments do you make in your life? How do you arrange them, and where do you typically go?", "T27Q01", 3, null, 0, "topic", 27],
+  ["T27Q02.mp3", "Routine", "What kinds of things do you do when you make appointments? Walk me through the process.", "T27Q02", 3, null, 0, "topic", 27],
+  ["T27Q03.mp3", "Past experience", "Talk about an appointment you made as a child. What was it for, and what happened?", "T27Q03", 3, null, 0, "topic", 27],
+  ["T27Q04.mp3", "Past experience", "Unexpected things can happen with appointments. Tell me about a memorable incident — what happened, and how did you deal with it?", "T27Q04", 3, null, 0, "topic", 27]
  ],
  "Geography":[
-  ["question-audio/T28Q01.mp3", "Describe", "Describe your country's geography. Are there mountains, lakes, or rivers? What is it like?", "T28Q01", 3, null, 0, "topic", 28],
-  ["question-audio/T28Q02.mp3", "Describe", "Pick a favorite place in your country from your childhood. Describe it in detail. What do you remember about it?", "T28Q02", 3, null, 0, "topic", 28],
-  ["question-audio/T28Q03.mp3", "Past experience", "People often have memorable experiences when they explore their country's geography. Tell me a memorable story — maybe a mountain you climbed or a beach you visited.", "T28Q03", 3, null, 0, "topic", 28],
-  ["question-audio/T28Q04.mp3", "Past experience", "Tell me about an early memory of your country's geography. Maybe it was a special place or an important landmark.", "T28Q04", 3, null, 0, "topic", 28],
-  ["question-audio/T28Q05.mp3", "Compare", "How has your country changed in the past decade — in urban development, tourism, or another area? Pick one area and describe it in detail.", "T28Q05", 2, null, 0, "topic", 28],
-  ["question-audio/T28Q06.mp3", "Compare", "Talk about a country that is geographically similar to your country. What changes has it gone through in recent years?", "T28Q06", 2, null, 0, "topic", 28],
-  ["question-audio/T28Q07.mp3", "Opinion / issue", "Tell me about an article you read about the country you mentioned. What was it about — politics, economy, or something else?", "T28Q07", 2, "T28Q06", 0, "topic", 28],
-  ["question-audio/T28Q08.mp3", "Compare", "Tell me in detail about changes you've observed in the relationship between your country and other countries — in economy, sports, culture, or politics.", "T28Q08", 2, null, 0, "topic", 28],
-  ["question-audio/T28Q09.mp3", "Opinion / issue", "Think about a specific historic event that affected the relationship between your country and a neighboring nation. What was the event, and what did it lead to?", "T28Q09", 2, null, 0, "topic", 28]
+  ["T28Q01.mp3", "Describe", "Describe your country's geography. Are there mountains, lakes, or rivers? What is it like?", "T28Q01", 3, null, 0, "topic", 28],
+  ["T28Q02.mp3", "Describe", "Pick a favorite place in your country from your childhood. Describe it in detail. What do you remember about it?", "T28Q02", 3, null, 0, "topic", 28],
+  ["T28Q03.mp3", "Past experience", "People often have memorable experiences when they explore their country's geography. Tell me a memorable story — maybe a mountain you climbed or a beach you visited.", "T28Q03", 3, null, 0, "topic", 28],
+  ["T28Q04.mp3", "Past experience", "Tell me about an early memory of your country's geography. Maybe it was a special place or an important landmark.", "T28Q04", 3, null, 0, "topic", 28],
+  ["T28Q05.mp3", "Compare", "How has your country changed in the past decade — in urban development, tourism, or another area? Pick one area and describe it in detail.", "T28Q05", 2, null, 0, "topic", 28],
+  ["T28Q06.mp3", "Compare", "Talk about a country that is geographically similar to your country. What changes has it gone through in recent years?", "T28Q06", 2, null, 0, "topic", 28],
+  ["T28Q07.mp3", "Opinion / issue", "Tell me about an article you read about the country you mentioned. What was it about — politics, economy, or something else?", "T28Q07", 2, "T28Q06", 0, "topic", 28],
+  ["T28Q08.mp3", "Compare", "Tell me in detail about changes you've observed in the relationship between your country and other countries — in economy, sports, culture, or politics.", "T28Q08", 2, null, 0, "topic", 28],
+  ["T28Q09.mp3", "Opinion / issue", "Think about a specific historic event that affected the relationship between your country and a neighboring nation. What was the event, and what did it lead to?", "T28Q09", 2, null, 0, "topic", 28]
  ],
  "Recycling":[
-  ["question-audio/T29Q01.mp3", "Routine", "How is recycling practiced in your country? What do people specifically do, and how does the system work?", "T29Q01", 3, null, 0, "topic", 29],
-  ["question-audio/T29Q02.mp3", "Routine", "What kinds of things do you recycle? Tell me about all the different items.", "T29Q02", 3, null, 0, "topic", 29],
-  ["question-audio/T29Q03.mp3", "Past experience", "Problems sometimes happen while recycling — maybe pickup didn't come, items were too big, or containers were knocked over. Tell me about a problem you had.", "T29Q03", 3, null, 0, "topic", 29],
-  ["question-audio/T29Q04.mp3", "Compare", "Tell me what recycling was like when you were a child. Was there a place to take recyclables? Any special containers? Describe the experience.", "T29Q04", 3, null, 0, "topic", 29],
-  ["question-audio/T29Q05.mp3", "Compare", "Recycling has changed over the years. Tell me how recycling materials were collected in the past and how this has evolved.", "T29Q05", 2, null, 0, "topic", 29],
-  ["question-audio/T29Q06.mp3", "Opinion / issue", "Stories about recycling are often in the media. Tell me about a news story you heard related to recycling or the environment.", "T29Q06", 2, null, 0, "topic", 29]
+  ["T29Q01.mp3", "Routine", "How is recycling practiced in your country? What do people specifically do, and how does the system work?", "T29Q01", 3, null, 0, "topic", 29],
+  ["T29Q02.mp3", "Routine", "What kinds of things do you recycle? Tell me about all the different items.", "T29Q02", 3, null, 0, "topic", 29],
+  ["T29Q03.mp3", "Past experience", "Problems sometimes happen while recycling — maybe pickup didn't come, items were too big, or containers were knocked over. Tell me about a problem you had.", "T29Q03", 3, null, 0, "topic", 29],
+  ["T29Q04.mp3", "Compare", "Tell me what recycling was like when you were a child. Was there a place to take recyclables? Any special containers? Describe the experience.", "T29Q04", 3, null, 0, "topic", 29],
+  ["T29Q05.mp3", "Compare", "Recycling has changed over the years. Tell me how recycling materials were collected in the past and how this has evolved.", "T29Q05", 2, null, 0, "topic", 29],
+  ["T29Q06.mp3", "Opinion / issue", "Stories about recycling are often in the media. Tell me about a news story you heard related to recycling or the environment.", "T29Q06", 2, null, 0, "topic", 29]
  ],
  "Free Time":[
-  ["question-audio/T30Q01.mp3", "Describe", "Where do people in your country typically go in their free time? What are the most popular places?", "T30Q01", 3, null, 0, "topic", 30],
-  ["question-audio/T30Q02.mp3", "Compare", "What was your free time like in the past? Did you have more or less free time back then, and how was it different?", "T30Q02", 3, null, 0, "topic", 30],
-  ["question-audio/T30Q03.mp3", "Past experience", "Tell me about the last time you had some free time. When was it, what did you do, and who did you spend it with?", "T30Q03", 3, null, 0, "topic", 30],
-  ["question-audio/T30Q04.mp3", "Describe", "What do people in your country typically do in their free time? What's special about those activities?", "T30Q04", 3, null, 0, "topic", 30]
+  ["T30Q01.mp3", "Describe", "Where do people in your country typically go in their free time? What are the most popular places?", "T30Q01", 3, null, 0, "topic", 30],
+  ["T30Q02.mp3", "Compare", "What was your free time like in the past? Did you have more or less free time back then, and how was it different?", "T30Q02", 3, null, 0, "topic", 30],
+  ["T30Q03.mp3", "Past experience", "Tell me about the last time you had some free time. When was it, what did you do, and who did you spend it with?", "T30Q03", 3, null, 0, "topic", 30],
+  ["T30Q04.mp3", "Describe", "What do people in your country typically do in their free time? What's special about those activities?", "T30Q04", 3, null, 0, "topic", 30]
  ],
  "Family & Friends":[
-  ["question-audio/T31Q01.mp3", "Describe", "Tell me about your family. Who are the members of your family, and what are they like?", "T31Q01", 3, null, 0, "topic", 31],
-  ["question-audio/T31Q02.mp3", "Past experience", "Talk about what you recently did with your family members or friends. Tell me about the activities you did together.", "T31Q02", 3, null, 0, "topic", 31],
-  ["question-audio/T31Q03.mp3", "Past experience", "Tell me about a special event or holiday you celebrated with your family or friends. What made it so special?", "T31Q03", 3, null, 0, "topic", 31],
-  ["question-audio/T31Q04.mp3", "Past experience", "Talk about a time you recently visited a friend or family member. What did you do when you got there, and what was memorable?", "T31Q04", 3, null, 0, "topic", 31],
-  ["question-audio/T31Q05.mp3", "Compare", "Describe two different friends or family members. Describe each in detail, then tell me about their similarities and differences.", "T31Q05", 2, null, 0, "topic", 31],
-  ["question-audio/T31Q06.mp3", "Opinion / issue", "When you get together with friends or family, what topics do you usually discuss? Why are these things important to you?", "T31Q06", 2, null, 0, "topic", 31]
+  ["T31Q01.mp3", "Describe", "Tell me about your family. Who are the members of your family, and what are they like?", "T31Q01", 3, null, 0, "topic", 31],
+  ["T31Q02.mp3", "Past experience", "Talk about what you recently did with your family members or friends. Tell me about the activities you did together.", "T31Q02", 3, null, 0, "topic", 31],
+  ["T31Q03.mp3", "Past experience", "Tell me about a special event or holiday you celebrated with your family or friends. What made it so special?", "T31Q03", 3, null, 0, "topic", 31],
+  ["T31Q04.mp3", "Past experience", "Talk about a time you recently visited a friend or family member. What did you do when you got there, and what was memorable?", "T31Q04", 3, null, 0, "topic", 31],
+  ["T31Q05.mp3", "Compare", "Describe two different friends or family members. Describe each in detail, then tell me about their similarities and differences.", "T31Q05", 2, null, 0, "topic", 31],
+  ["T31Q06.mp3", "Opinion / issue", "When you get together with friends or family, what topics do you usually discuss? Why are these things important to you?", "T31Q06", 2, null, 0, "topic", 31]
  ],
  "Hotels":[
-  ["question-audio/T32Q01.mp3", "Describe", "Tell me about hotels in your country. What are they typically like, and where are they usually located?", "T32Q01", 3, null, 0, "topic", 32],
-  ["question-audio/T32Q02.mp3", "Routine", "What do you typically do when you stay at a hotel? Walk me through your routine from check-in to check-out.", "T32Q02", 3, null, 0, "topic", 32],
-  ["question-audio/T32Q03.mp3", "Past experience", "People often remember beautiful or interesting hotels. Tell me about a hotel you remember. Where was it, what was it like, and why was it memorable?", "T32Q03", 3, null, 0, "topic", 32],
-  ["question-audio/T32Q04.mp3", "Past experience", "When was the last time you stayed at a hotel? Where were you, why were you there, and what did you do?", "T32Q04", 3, null, 0, "topic", 32]
+  ["T32Q01.mp3", "Describe", "Tell me about hotels in your country. What are they typically like, and where are they usually located?", "T32Q01", 3, null, 0, "topic", 32],
+  ["T32Q02.mp3", "Routine", "What do you typically do when you stay at a hotel? Walk me through your routine from check-in to check-out.", "T32Q02", 3, null, 0, "topic", 32],
+  ["T32Q03.mp3", "Past experience", "People often remember beautiful or interesting hotels. Tell me about a hotel you remember. Where was it, what was it like, and why was it memorable?", "T32Q03", 3, null, 0, "topic", 32],
+  ["T32Q04.mp3", "Past experience", "When was the last time you stayed at a hotel? Where were you, why were you there, and what did you do?", "T32Q04", 3, null, 0, "topic", 32]
  ],
  "Newspapers":[
-  ["question-audio/T33Q01.mp3", "Routine", "Do you read newspapers? What kinds of news do you follow, and how do you usually get your news?", "T33Q01", 3, null, 0, "topic", 33],
-  ["question-audio/T33Q02.mp3", "Compare", "How did you first become interested in reading newspapers? How has that interest developed over the years?", "T33Q02", 3, null, 0, "topic", 33],
-  ["question-audio/T33Q03.mp3", "Describe", "What kinds of newspapers are there in your country? What kinds of news do they typically report, and what sections do they have?", "T33Q03", 3, null, 0, "topic", 33],
-  ["question-audio/T33Q04.mp3", "Past experience", "Tell me about a story you read or saw that interested you. What made it more memorable than others, and what were your thoughts after reading it?", "T33Q04", 3, null, 0, "topic", 33],
-  ["question-audio/T33Q05.mp3", "Compare", "How are newspapers different today than they were in the past? What has changed about how the news is reported?", "T33Q05", 2, null, 0, "topic", 33],
-  ["question-audio/T33Q06.mp3", "Compare", "Newspapers are going through a transition from paper to digital. How has this change affected the way people get their news?", "T33Q06", 2, null, 0, "topic", 33]
+  ["T33Q01.mp3", "Routine", "Do you read newspapers? What kinds of news do you follow, and how do you usually get your news?", "T33Q01", 3, null, 0, "topic", 33],
+  ["T33Q02.mp3", "Compare", "How did you first become interested in reading newspapers? How has that interest developed over the years?", "T33Q02", 3, null, 0, "topic", 33],
+  ["T33Q03.mp3", "Describe", "What kinds of newspapers are there in your country? What kinds of news do they typically report, and what sections do they have?", "T33Q03", 3, null, 0, "topic", 33],
+  ["T33Q04.mp3", "Past experience", "Tell me about a story you read or saw that interested you. What made it more memorable than others, and what were your thoughts after reading it?", "T33Q04", 3, null, 0, "topic", 33],
+  ["T33Q05.mp3", "Compare", "How are newspapers different today than they were in the past? What has changed about how the news is reported?", "T33Q05", 2, null, 0, "topic", 33],
+  ["T33Q06.mp3", "Compare", "Newspapers are going through a transition from paper to digital. How has this change affected the way people get their news?", "T33Q06", 2, null, 0, "topic", 33]
  ],
  "Television":[
-  ["question-audio/T34Q01.mp3", "Routine", "What kinds of television programs do you enjoy watching? Tell me about your viewing habits.", "T34Q01", 3, null, 0, "topic", 34],
-  ["question-audio/T34Q02.mp3", "Routine", "When do you watch TV most often? Where do you watch it, and who do you watch with? What do you do while watching?", "T34Q02", 3, null, 0, "topic", 34],
-  ["question-audio/T34Q03.mp3", "Compare", "What were TV programs like when you were young? How are they different now? How have TV programs changed over the years?", "T34Q03", 3, null, 0, "topic", 34],
-  ["question-audio/T34Q04.mp3", "Compare", "How did you first become interested in watching TV? What kinds of programs did you like as a child, and how has your interest changed over time?", "T34Q04", 3, null, 0, "topic", 34]
+  ["T34Q01.mp3", "Routine", "What kinds of television programs do you enjoy watching? Tell me about your viewing habits.", "T34Q01", 3, null, 0, "topic", 34],
+  ["T34Q02.mp3", "Routine", "When do you watch TV most often? Where do you watch it, and who do you watch with? What do you do while watching?", "T34Q02", 3, null, 0, "topic", 34],
+  ["T34Q03.mp3", "Compare", "What were TV programs like when you were young? How are they different now? How have TV programs changed over the years?", "T34Q03", 3, null, 0, "topic", 34],
+  ["T34Q04.mp3", "Compare", "How did you first become interested in watching TV? What kinds of programs did you like as a child, and how has your interest changed over time?", "T34Q04", 3, null, 0, "topic", 34]
  ],
  "Industry":[
-  ["question-audio/T35Q01.mp3", "Describe", "What are the main industries in your country? How have they changed in recent years?", "T35Q01", 3, null, 0, "topic", 35],
-  ["question-audio/T35Q02.mp3", "Describe", "Talk about a well-known company in the industry you just mentioned. What is special about that company?", "T35Q02", 3, "T35Q01", 0, "topic", 35],
-  ["question-audio/T35Q03.mp3", "Describe", "Tell me about the benefits that industry provides. What kind of good does it do for your country?", "T35Q03", 3, null, 0, "topic", 35],
-  ["question-audio/T35Q04.mp3", "Describe", "What kinds of companies do young people in your country want to work for? Why do they want to work for those companies?", "T35Q04", 3, null, 0, "topic", 35],
-  ["question-audio/T35Q05.mp3", "Opinion / issue", "Tell me about an incident that occurred in the industry you follow. Maybe a company released something that disappointed people. How did you react?", "T35Q05", 2, "T35Q01", 0, "topic", 35],
-  ["question-audio/T35Q06.mp3", "Compare", "How do people prepare for future work in your country's industries? Do they get general education first, specific training, or learn on the job? How has this changed over time?", "T35Q06", 2, null, 0, "topic", 35]
+  ["T35Q01.mp3", "Describe", "What are the main industries in your country? How have they changed in recent years?", "T35Q01", 3, null, 0, "topic", 35],
+  ["T35Q02.mp3", "Describe", "Talk about a well-known company in the industry you just mentioned. What is special about that company?", "T35Q02", 3, "T35Q01", 0, "topic", 35],
+  ["T35Q03.mp3", "Describe", "Tell me about the benefits that industry provides. What kind of good does it do for your country?", "T35Q03", 3, null, 0, "topic", 35],
+  ["T35Q04.mp3", "Describe", "What kinds of companies do young people in your country want to work for? Why do they want to work for those companies?", "T35Q04", 3, null, 0, "topic", 35],
+  ["T35Q05.mp3", "Opinion / issue", "Tell me about an incident that occurred in the industry you follow. Maybe a company released something that disappointed people. How did you react?", "T35Q05", 2, "T35Q01", 0, "topic", 35],
+  ["T35Q06.mp3", "Compare", "How do people prepare for future work in your country's industries? Do they get general education first, specific training, or learn on the job? How has this changed over time?", "T35Q06", 2, null, 0, "topic", 35]
  ],
  "Text Messages":[
-  ["question-audio/T36Q01.mp3", "Routine", "Tell me about the kinds of text messages you typically send to your friends. What do you usually talk about?", "T36Q01", 3, null, 0, "topic", 36],
-  ["question-audio/T36Q02.mp3", "Routine", "Tell me when and where you send text messages most often. Who do you exchange messages with?", "T36Q02", 3, null, 0, "topic", 36],
-  ["question-audio/T36Q03.mp3", "Past experience", "Tell me about a memorable text message you got in the past. Who was it from, what was it about, and what made it memorable?", "T36Q03", 3, null, 0, "topic", 36],
-  ["question-audio/T36Q04.mp3", "Past experience", "We sometimes have problems sending text messages. Tell me about a time you had trouble sending one — what was the background, and how did you deal with it?", "T36Q04", 3, null, 0, "topic", 36]
+  ["T36Q01.mp3", "Routine", "Tell me about the kinds of text messages you typically send to your friends. What do you usually talk about?", "T36Q01", 3, null, 0, "topic", 36],
+  ["T36Q02.mp3", "Routine", "Tell me when and where you send text messages most often. Who do you exchange messages with?", "T36Q02", 3, null, 0, "topic", 36],
+  ["T36Q03.mp3", "Past experience", "Tell me about a memorable text message you got in the past. Who was it from, what was it about, and what made it memorable?", "T36Q03", 3, null, 0, "topic", 36],
+  ["T36Q04.mp3", "Past experience", "We sometimes have problems sending text messages. Tell me about a time you had trouble sending one — what was the background, and how did you deal with it?", "T36Q04", 3, null, 0, "topic", 36]
  ],
  "Identification Cards":[
-  ["question-audio/T37Q01.mp3", "Describe", "What identification cards do you currently have? Tell me in detail when and how you use them.", "T37Q01", 3, null, 0, "topic", 37],
-  ["question-audio/T37Q02.mp3", "Routine", "I'd like to know about the procedures you went through to get an identification card. Walk me through them from start to finish.", "T37Q02", 3, null, 0, "topic", 37],
-  ["question-audio/T37Q03.mp3", "Past experience", "How did you feel when you first got an identification card? When was it, what was the card for, and what do you remember?", "T37Q03", 3, null, 0, "topic", 37]
+  ["T37Q01.mp3", "Describe", "What identification cards do you currently have? Tell me in detail when and how you use them.", "T37Q01", 3, null, 0, "topic", 37],
+  ["T37Q02.mp3", "Routine", "I'd like to know about the procedures you went through to get an identification card. Walk me through them from start to finish.", "T37Q02", 3, null, 0, "topic", 37],
+  ["T37Q03.mp3", "Past experience", "How did you feel when you first got an identification card? When was it, what was the card for, and what do you remember?", "T37Q03", 3, null, 0, "topic", 37]
  ],
  "Role-play: Clothing Stores":[
-  ["question-audio/RP01-1.mp3", "Role-play · Ask questions", "You are at a clothing store and need to buy some clothes. Ask the sales assistant three or four questions about the items you'd like to purchase.", "RP01-1", 0, null, 0, "rp", 1],
-  ["question-audio/RP01-2.mp3", "Role-play · Problem", "The clothes you ordered have arrived, but one of the shirts has a problem. Call the clothing store, explain the issue, and offer two or three alternatives to resolve it.", "RP01-2", 0, null, 0, "rp", 1],
-  ["question-audio/RP01-3.mp3", "Similar experience", "Have you ever been unhappy with something you bought or a service you received? Tell me everything that happened and how you dealt with it.", "RP01-3", 0, null, 0, "rp", 1]
+  ["RP01-1.mp3", "Role-play · Ask questions", "You are at a clothing store and need to buy some clothes. Ask the sales assistant three or four questions about the items you'd like to purchase.", "RP01-1", 0, null, 0, "rp", 1],
+  ["RP01-2.mp3", "Role-play · Problem", "The clothes you ordered have arrived, but one of the shirts has a problem. Call the clothing store, explain the issue, and offer two or three alternatives to resolve it.", "RP01-2", 0, null, 0, "rp", 1],
+  ["RP01-3.mp3", "Similar experience", "Have you ever been unhappy with something you bought or a service you received? Tell me everything that happened and how you dealt with it.", "RP01-3", 0, null, 0, "rp", 1]
  ],
  "Role-play: Store Sale":[
-  ["question-audio/RP02-1.mp3", "Role-play · Ask questions", "You see a sign at your favorite store advertising a big sale. Go inside and ask three or four questions to find out as much as you can about it.", "RP02-1", 0, null, 0, "rp", 2],
-  ["question-audio/RP02-2.mp3", "Role-play · Problem", "You get home and realize the item you just bought is damaged. Call the store, explain the situation, and propose solutions.", "RP02-2", 0, null, 0, "rp", 2],
-  ["question-audio/RP02-3.mp3", "Similar experience", "That's the end of the situation. Have you ever bought something that didn't work or was damaged? Tell me about the item, what was wrong with it, and how you resolved the situation.", "RP02-3", 0, null, 0, "rp", 2]
+  ["RP02-1.mp3", "Role-play · Ask questions", "You see a sign at your favorite store advertising a big sale. Go inside and ask three or four questions to find out as much as you can about it.", "RP02-1", 0, null, 0, "rp", 2],
+  ["RP02-2.mp3", "Role-play · Problem", "You get home and realize the item you just bought is damaged. Call the store, explain the situation, and propose solutions.", "RP02-2", 0, null, 0, "rp", 2],
+  ["RP02-3.mp3", "Similar experience", "That's the end of the situation. Have you ever bought something that didn't work or was damaged? Tell me about the item, what was wrong with it, and how you resolved the situation.", "RP02-3", 0, null, 0, "rp", 2]
  ],
  "Role-play: Shopping":[
-  ["question-audio/RP03-1.mp3", "Role-play · Ask questions", "There is a newly opened store in your neighborhood. Call a friend who knows about the new store and ask some questions to get information.", "RP03-1", 0, null, 0, "rp", 3],
-  ["question-audio/RP03-2.mp3", "Role-play · Problem", "You left your wallet behind at the store. Call the store, explain the situation, and give two or three alternatives.", "RP03-2", 0, null, 0, "rp", 3],
-  ["question-audio/RP03-3.mp3", "Similar experience", "Have you ever left something behind at a restaurant or a store? It could have been your wallet, your phone, or something else important. Give me all the details.", "RP03-3", 0, null, 0, "rp", 3]
+  ["RP03-1.mp3", "Role-play · Ask questions", "There is a newly opened store in your neighborhood. Call a friend who knows about the new store and ask some questions to get information.", "RP03-1", 0, null, 0, "rp", 3],
+  ["RP03-2.mp3", "Role-play · Problem", "You left your wallet behind at the store. Call the store, explain the situation, and give two or three alternatives.", "RP03-2", 0, null, 0, "rp", 3],
+  ["RP03-3.mp3", "Similar experience", "Have you ever left something behind at a restaurant or a store? It could have been your wallet, your phone, or something else important. Give me all the details.", "RP03-3", 0, null, 0, "rp", 3]
  ],
  "Role-play: Food Stores":[
-  ["question-audio/RP04-1.mp3", "Role-play · Ask questions", "Your friend told you about a food store he or she goes to. Call your friend and ask about the food store to get some information.", "RP04-1", 0, null, 0, "rp", 4],
-  ["question-audio/RP04-2.mp3", "Role-play · Problem", "You accidentally left your groceries behind at the food store. Call the food store, explain the situation, and give two or three solutions.", "RP04-2", 0, null, 0, "rp", 4],
-  ["question-audio/RP04-3.mp3", "Similar experience", "Talk about a food store you go to often. How did you first find it, what's special about that store, and what do they offer?", "RP04-3", 0, null, 0, "rp", 4]
+  ["RP04-1.mp3", "Role-play · Ask questions", "Your friend told you about a food store he or she goes to. Call your friend and ask about the food store to get some information.", "RP04-1", 0, null, 0, "rp", 4],
+  ["RP04-2.mp3", "Role-play · Problem", "You accidentally left your groceries behind at the food store. Call the food store, explain the situation, and give two or three solutions.", "RP04-2", 0, null, 0, "rp", 4],
+  ["RP04-3.mp3", "Similar experience", "Talk about a food store you go to often. How did you first find it, what's special about that store, and what do they offer?", "RP04-3", 0, null, 0, "rp", 4]
  ],
  "Role-play: Trips":[
-  ["question-audio/RP05-1.mp3", "Role-play · Ask questions", "You are planning a trip. Call a travel agency and ask three or four questions about the package you're interested in.", "RP05-1", 0, null, 0, "rp", 5],
-  ["question-audio/RP05-2.mp3", "Role-play · Problem", "You've booked a non-refundable plane ticket, but something has come up and you can't travel. Call your travel agent, explain the situation, and offer alternatives.", "RP05-2", 0, null, 0, "rp", 5],
-  ["question-audio/RP05-3.mp3", "Similar experience", "Have you ever had a surprising, unexpected, or unusual experience during a trip? Tell me when and where you were, and give me all the details of what happened.", "RP05-3", 0, null, 0, "rp", 5]
+  ["RP05-1.mp3", "Role-play · Ask questions", "You are planning a trip. Call a travel agency and ask three or four questions about the package you're interested in.", "RP05-1", 0, null, 0, "rp", 5],
+  ["RP05-2.mp3", "Role-play · Problem", "You've booked a non-refundable plane ticket, but something has come up and you can't travel. Call your travel agent, explain the situation, and offer alternatives.", "RP05-2", 0, null, 0, "rp", 5],
+  ["RP05-3.mp3", "Similar experience", "Have you ever had a surprising, unexpected, or unusual experience during a trip? Tell me when and where you were, and give me all the details of what happened.", "RP05-3", 0, null, 0, "rp", 5]
  ],
  "Role-play: Train":[
-  ["question-audio/RP06-1.mp3", "Role-play · Ask questions", "You need to buy a train ticket to visit a friend this weekend. Go to the ticket counter at the train station and ask three or four questions to get the information you need.", "RP06-1", 0, null, 0, "rp", 6],
-  ["question-audio/RP06-2.mp3", "Role-play · Problem", "When you get to the train station, you miss your train and will be late meeting your friend. Call your friend, explain the situation, and offer some alternatives.", "RP06-2", 0, null, 0, "rp", 6],
-  ["question-audio/RP06-3.mp3", "Similar experience", "Have you ever traveled somewhere but missed a bus, train, or plane? Tell me where you were going, what happened, and what you did to get to your destination.", "RP06-3", 0, null, 0, "rp", 6]
+  ["RP06-1.mp3", "Role-play · Ask questions", "You need to buy a train ticket to visit a friend this weekend. Go to the ticket counter at the train station and ask three or four questions to get the information you need.", "RP06-1", 0, null, 0, "rp", 6],
+  ["RP06-2.mp3", "Role-play · Problem", "When you get to the train station, you miss your train and will be late meeting your friend. Call your friend, explain the situation, and offer some alternatives.", "RP06-2", 0, null, 0, "rp", 6],
+  ["RP06-3.mp3", "Similar experience", "Have you ever traveled somewhere but missed a bus, train, or plane? Tell me where you were going, what happened, and what you did to get to your destination.", "RP06-3", 0, null, 0, "rp", 6]
  ],
  "Role-play: Geography":[
-  ["question-audio/RP07-1.mp3", "Role-play · Ask questions", "You are planning to go on a trip to a country where your friend lives. Call your friend and ask about the geography there, plus two or three questions regarding your travel plans.", "RP07-1", 0, null, 0, "rp", 7],
-  ["question-audio/RP07-2.mp3", "Role-play · Problem", "You cannot go on the trip because of some reason. Call your friend and explain the situation. Give two or three alternatives.", "RP07-2", 0, null, 0, "rp", 7],
-  ["question-audio/RP07-3.mp3", "Similar experience", "Have you ever been on a trip to another country? How was the geography there different from your country's geography?", "RP07-3", 0, null, 0, "rp", 7]
+  ["RP07-1.mp3", "Role-play · Ask questions", "You are planning to go on a trip to a country where your friend lives. Call your friend and ask about the geography there, plus two or three questions regarding your travel plans.", "RP07-1", 0, null, 0, "rp", 7],
+  ["RP07-2.mp3", "Role-play · Problem", "You cannot go on the trip because of some reason. Call your friend and explain the situation. Give two or three alternatives.", "RP07-2", 0, null, 0, "rp", 7],
+  ["RP07-3.mp3", "Similar experience", "Have you ever been on a trip to another country? How was the geography there different from your country's geography?", "RP07-3", 0, null, 0, "rp", 7]
  ],
  "Role-play: Hotels":[
-  ["question-audio/RP08-1.mp3", "Role-play · Ask questions", "You've arrived in a new city and need a hotel for the night. Go to the reception desk, describe the kind of room you want, and ask three or four questions.", "RP08-1", 0, null, 0, "rp", 8],
-  ["question-audio/RP08-2.mp3", "Role-play · Problem", "There are no rooms available at the hotel. Leave a message for your travel companions explaining the situation and suggesting alternatives.", "RP08-2", 0, null, 0, "rp", 8],
-  ["question-audio/RP08-3.mp3", "Similar experience", "Think about a time when your travel plans did not work out as expected. What happened, what did everyone do, and how was the situation finally resolved?", "RP08-3", 0, null, 0, "rp", 8]
+  ["RP08-1.mp3", "Role-play · Ask questions", "You've arrived in a new city and need a hotel for the night. Go to the reception desk, describe the kind of room you want, and ask three or four questions.", "RP08-1", 0, null, 0, "rp", 8],
+  ["RP08-2.mp3", "Role-play · Problem", "There are no rooms available at the hotel. Leave a message for your travel companions explaining the situation and suggesting alternatives.", "RP08-2", 0, null, 0, "rp", 8],
+  ["RP08-3.mp3", "Similar experience", "Think about a time when your travel plans did not work out as expected. What happened, what did everyone do, and how was the situation finally resolved?", "RP08-3", 0, null, 0, "rp", 8]
  ],
  "Role-play: Weather":[
-  ["question-audio/RP09-1.mp3", "Role-play · Ask questions", "You are going on vacation to another country. Call a hotel there and ask what the weather is like. You want to know what clothes to bring. Ask two or three more questions about your travel plans.", "RP09-1", 0, null, 0, "rp", 9],
-  ["question-audio/RP09-2.mp3", "Role-play · Problem", "The clothes you brought on vacation are not suitable for the weather. Call a clothing store, explain the situation, and ask two or three questions about clothes they have on sale.", "RP09-2", 0, null, 0, "rp", 9],
-  ["question-audio/RP09-3.mp3", "Similar experience", "Have you ever had trouble due to unexpected weather? Who were you with, and how did you deal with the situation? Tell me everything that happened.", "RP09-3", 0, null, 0, "rp", 9]
+  ["RP09-1.mp3", "Role-play · Ask questions", "You are going on vacation to another country. Call a hotel there and ask what the weather is like. You want to know what clothes to bring. Ask two or three more questions about your travel plans.", "RP09-1", 0, null, 0, "rp", 9],
+  ["RP09-2.mp3", "Role-play · Problem", "The clothes you brought on vacation are not suitable for the weather. Call a clothing store, explain the situation, and ask two or three questions about clothes they have on sale.", "RP09-2", 0, null, 0, "rp", 9],
+  ["RP09-3.mp3", "Similar experience", "Have you ever had trouble due to unexpected weather? Who were you with, and how did you deal with the situation? Tell me everything that happened.", "RP09-3", 0, null, 0, "rp", 9]
  ],
  "Role-play: Business Trips":[
-  ["question-audio/RP10-1.mp3", "Role-play · Ask questions", "You are going on a business trip to another country. Call a hotel you want to stay at and ask three or four questions about it.", "RP10-1", 0, null, 0, "rp", 10],
-  ["question-audio/RP10-2.mp3", "Role-play · Problem", "You were supposed to go on a business trip with your boss. Something has come up suddenly and you can't go. Call your boss, explain the situation, and make two or three suggestions to keep the business moving forward.", "RP10-2", 0, null, 0, "rp", 10],
-  ["question-audio/RP10-3.mp3", "Similar experience", "Have you ever had a problem during a business trip or leisure trip? What was the nature of the problem, and how did you deal with it?", "RP10-3", 0, null, 0, "rp", 10]
+  ["RP10-1.mp3", "Role-play · Ask questions", "You are going on a business trip to another country. Call a hotel you want to stay at and ask three or four questions about it.", "RP10-1", 0, null, 0, "rp", 10],
+  ["RP10-2.mp3", "Role-play · Problem", "You were supposed to go on a business trip with your boss. Something has come up suddenly and you can't go. Call your boss, explain the situation, and make two or three suggestions to keep the business moving forward.", "RP10-2", 0, null, 0, "rp", 10],
+  ["RP10-3.mp3", "Similar experience", "Have you ever had a problem during a business trip or leisure trip? What was the nature of the problem, and how did you deal with it?", "RP10-3", 0, null, 0, "rp", 10]
  ],
  "Role-play: Phone":[
-  ["question-audio/RP11-1.mp3", "Role-play · Ask questions", "You'd like to buy a new mobile phone. Call a store and ask three or four questions about the models available.", "RP11-1", 0, null, 0, "rp", 11],
-  ["question-audio/RP11-2.mp3", "Role-play · Problem", "You have received the new phone, but the features are not what you expected. You would like to return it and get a replacement. Call the store, explain the situation, and make arrangements to get a new product.", "RP11-2", 0, null, 0, "rp", 11],
-  ["question-audio/RP11-3.mp3", "Similar experience", "Have you ever bought a piece of technology that turned out to be different from what you expected? Was the feature not what you wanted, or did it simply not work properly? Tell me about that experience in detail.", "RP11-3", 0, null, 0, "rp", 11]
+  ["RP11-1.mp3", "Role-play · Ask questions", "You'd like to buy a new mobile phone. Call a store and ask three or four questions about the models available.", "RP11-1", 0, null, 0, "rp", 11],
+  ["RP11-2.mp3", "Role-play · Problem", "You have received the new phone, but the features are not what you expected. You would like to return it and get a replacement. Call the store, explain the situation, and make arrangements to get a new product.", "RP11-2", 0, null, 0, "rp", 11],
+  ["RP11-3.mp3", "Similar experience", "Have you ever bought a piece of technology that turned out to be different from what you expected? Was the feature not what you wanted, or did it simply not work properly? Tell me about that experience in detail.", "RP11-3", 0, null, 0, "rp", 11]
  ],
  "Role-play: Movies":[
-  ["question-audio/RP12-1.mp3", "Role-play · Ask questions", "You want to take your friend to the cinema. Call the theater and ask three or four questions to get tickets for you and your friend.", "RP12-1", 0, null, 0, "rp", 12],
-  ["question-audio/RP12-2.mp3", "Role-play · Problem", "When you and your friend arrive at the cinema, you discover that you have been sold the wrong tickets. Explain the situation to the staff at the ticket booth and offer two or three alternatives to resolve the problem.", "RP12-2", 0, null, 0, "rp", 12],
-  ["question-audio/RP12-3.mp3", "Similar experience", "Have you ever bought tickets for a concert or planned a trip — or made plans of any kind — and then had to cancel at the last minute because something came up? When did it happen? What exactly occurred, and what did you do to resolve the situation?", "RP12-3", 0, null, 0, "rp", 12]
+  ["RP12-1.mp3", "Role-play · Ask questions", "You want to take your friend to the cinema. Call the theater and ask three or four questions to get tickets for you and your friend.", "RP12-1", 0, null, 0, "rp", 12],
+  ["RP12-2.mp3", "Role-play · Problem", "When you and your friend arrive at the cinema, you discover that you have been sold the wrong tickets. Explain the situation to the staff at the ticket booth and offer two or three alternatives to resolve the problem.", "RP12-2", 0, null, 0, "rp", 12],
+  ["RP12-3.mp3", "Similar experience", "Have you ever bought tickets for a concert or planned a trip — or made plans of any kind — and then had to cancel at the last minute because something came up? When did it happen? What exactly occurred, and what did you do to resolve the situation?", "RP12-3", 0, null, 0, "rp", 12]
  ],
  "Role-play: Furniture":[
-  ["question-audio/RP13-1.mp3", "Role-play · Ask questions", "You are in a shop and you spot a piece of furniture you like. Go to the sales assistant and ask three or four questions about the item you wish to buy.", "RP13-1", 0, null, 0, "rp", 13],
-  ["question-audio/RP13-2.mp3", "Role-play · Problem", "When the furniture is delivered to your home, you discover a serious problem with it. Call the store, explain the situation, and offer two or three alternatives to resolve the issue.", "RP13-2", 0, null, 0, "rp", 13],
-  ["question-audio/RP13-3.mp3", "Similar experience", "Have you ever bought a piece of furniture and had a problem with it when it arrived? What was the problem, and how did you deal with the situation?", "RP13-3", 0, null, 0, "rp", 13]
+  ["RP13-1.mp3", "Role-play · Ask questions", "You are in a shop and you spot a piece of furniture you like. Go to the sales assistant and ask three or four questions about the item you wish to buy.", "RP13-1", 0, null, 0, "rp", 13],
+  ["RP13-2.mp3", "Role-play · Problem", "When the furniture is delivered to your home, you discover a serious problem with it. Call the store, explain the situation, and offer two or three alternatives to resolve the issue.", "RP13-2", 0, null, 0, "rp", 13],
+  ["RP13-3.mp3", "Similar experience", "Have you ever bought a piece of furniture and had a problem with it when it arrived? What was the problem, and how did you deal with the situation?", "RP13-3", 0, null, 0, "rp", 13]
  ],
  "Role-play: Housing":[
-  ["question-audio/RP14-1.mp3", "Role-play · Ask questions", "You would like to find a house to live in. Call a management office and ask three or four questions about getting a house.", "RP14-1", 0, null, 0, "rp", 14],
-  ["question-audio/RP14-2.mp3", "Role-play · Problem", "You have moved into the new house but found out that one of the windows is broken. Call the repair shop, explain the situation, and explain why you need a new window as soon as possible.", "RP14-2", 0, null, 0, "rp", 14],
-  ["question-audio/RP14-3.mp3", "Similar experience", "Tell me about a time when you broke something at home. What exactly happened, and how did you solve the problem? Give me all the details from beginning to end.", "RP14-3", 0, null, 0, "rp", 14]
+  ["RP14-1.mp3", "Role-play · Ask questions", "You would like to find a house to live in. Call a management office and ask three or four questions about getting a house.", "RP14-1", 0, null, 0, "rp", 14],
+  ["RP14-2.mp3", "Role-play · Problem", "You have moved into the new house but found out that one of the windows is broken. Call the repair shop, explain the situation, and explain why you need a new window as soon as possible.", "RP14-2", 0, null, 0, "rp", 14],
+  ["RP14-3.mp3", "Similar experience", "Tell me about a time when you broke something at home. What exactly happened, and how did you solve the problem? Give me all the details from beginning to end.", "RP14-3", 0, null, 0, "rp", 14]
  ],
 };
 const ATOPICS = Object.keys(AUDIO_BANK);
@@ -1453,7 +1453,7 @@ $('aGo').onclick = ()=>{
     return;
   }
   const pool = poolAllAudio();
-  if(!pool.length){ aSay('No audio clips found — check that the question-audio/ folder is next to this page.'); return; }
+  if(!pool.length){ aSay('No audio clips found — check that the audio files (T01Q01.mp3 …) are in the same place as this page.'); return; }
   const q = pick(pool); aUsed.add(q.id);
   loadClip(q); updateNext();
 };
@@ -2632,7 +2632,7 @@ function setupInit(){
 const setMsg=t=>{ $m('mSetMsg').textContent=t; };
 $m('mSetPlay').onclick=()=>{
   if(!M.player) M.player=new Audio();
-  M.player.volume=+$m('mVol').value; M.player.src='question-audio/intro.mp3'; M.player.currentTime=0;
+  M.player.volume=+$m('mVol').value; M.player.src='intro.mp3'; M.player.currentTime=0;
   M.player.play().then(()=>setMsg('Đang phát… hãy chỉnh âm lượng cho dễ nghe.')).catch(()=>setMsg('Không phát được âm thanh. Hãy kiểm tra tai nghe hoặc loa.'));
 };
 $m('mVol').oninput=()=>{ if(M.player) M.player.volume=+$m('mVol').value; };
